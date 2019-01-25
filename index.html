@@ -1,0 +1,3430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>day1</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+
+.clearfix {
+*zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.clearfix:after {
+clear: both;
+}
+.hide-text {
+font: 0/0 a;
+color: transparent;
+text-shadow: none;
+background-color: transparent;
+border: 0;
+}
+.input-block-level {
+display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+display: block;
+}
+audio,
+canvas,
+video {
+display: inline-block;
+*display: inline;
+*zoom: 1;
+}
+audio:not([controls]) {
+display: none;
+}
+html {
+font-size: 100%;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+a:focus {
+outline: thin dotted #333;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;
+}
+a:hover,
+a:active {
+outline: 0;
+}
+sub,
+sup {
+position: relative;
+font-size: 75%;
+line-height: 0;
+vertical-align: baseline;
+}
+sup {
+top: -0.5em;
+}
+sub {
+bottom: -0.25em;
+}
+img {
+
+max-width: 100%;
+
+width: auto\9;
+
+height: auto;
+
+vertical-align: middle;
+border: 0;
+-ms-interpolation-mode: bicubic;
+}
+#map_canvas img,
+.google-maps img {
+max-width: none;
+}
+button,
+input,
+select,
+textarea {
+margin: 0;
+font-size: 100%;
+vertical-align: middle;
+}
+button,
+input {
+*overflow: visible;
+line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+padding: 0;
+border: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+-webkit-appearance: button;
+cursor: pointer;
+}
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+cursor: pointer;
+}
+input[type="search"] {
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+-webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+-webkit-appearance: none;
+}
+textarea {
+overflow: auto;
+vertical-align: top;
+}
+@media print {
+* {
+text-shadow: none !important;
+color: #000 !important;
+background: transparent !important;
+box-shadow: none !important;
+}
+a,
+a:visited {
+text-decoration: underline;
+}
+a[href]:after {
+content: " (" attr(href) ")";
+}
+abbr[title]:after {
+content: " (" attr(title) ")";
+}
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+content: "";
+}
+pre,
+blockquote {
+border: 1px solid #999;
+page-break-inside: avoid;
+}
+thead {
+display: table-header-group;
+}
+tr,
+img {
+page-break-inside: avoid;
+}
+img {
+max-width: 100% !important;
+}
+@page {
+margin: 0.5cm;
+}
+p,
+h2,
+h3 {
+orphans: 3;
+widows: 3;
+}
+h2,
+h3 {
+page-break-after: avoid;
+}
+}
+body {
+margin: 0;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333333;
+background-color: #ffffff;
+}
+a {
+color: #0088cc;
+text-decoration: none;
+}
+a:hover,
+a:focus {
+color: #005580;
+text-decoration: underline;
+}
+.img-rounded {
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+.img-polaroid {
+padding: 4px;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.img-circle {
+-webkit-border-radius: 500px;
+-moz-border-radius: 500px;
+border-radius: 500px;
+}
+.row {
+margin-left: -20px;
+*zoom: 1;
+}
+.row:before,
+.row:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.row:after {
+clear: both;
+}
+[class*="span"] {
+float: left;
+min-height: 1px;
+margin-left: 20px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+width: 940px;
+}
+.span12 {
+width: 940px;
+}
+.span11 {
+width: 860px;
+}
+.span10 {
+width: 780px;
+}
+.span9 {
+width: 700px;
+}
+.span8 {
+width: 620px;
+}
+.span7 {
+width: 540px;
+}
+.span6 {
+width: 460px;
+}
+.span5 {
+width: 380px;
+}
+.span4 {
+width: 300px;
+}
+.span3 {
+width: 220px;
+}
+.span2 {
+width: 140px;
+}
+.span1 {
+width: 60px;
+}
+.offset12 {
+margin-left: 980px;
+}
+.offset11 {
+margin-left: 900px;
+}
+.offset10 {
+margin-left: 820px;
+}
+.offset9 {
+margin-left: 740px;
+}
+.offset8 {
+margin-left: 660px;
+}
+.offset7 {
+margin-left: 580px;
+}
+.offset6 {
+margin-left: 500px;
+}
+.offset5 {
+margin-left: 420px;
+}
+.offset4 {
+margin-left: 340px;
+}
+.offset3 {
+margin-left: 260px;
+}
+.offset2 {
+margin-left: 180px;
+}
+.offset1 {
+margin-left: 100px;
+}
+.row-fluid {
+width: 100%;
+*zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.row-fluid:after {
+clear: both;
+}
+.row-fluid [class*="span"] {
+display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+float: left;
+margin-left: 2.127659574468085%;
+*margin-left: 2.074468085106383%;
+}
+.row-fluid [class*="span"]:first-child {
+margin-left: 0;
+}
+.row-fluid .controls-row [class*="span"] + [class*="span"] {
+margin-left: 2.127659574468085%;
+}
+.row-fluid .span12 {
+width: 100%;
+*width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+width: 91.48936170212765%;
+*width: 91.43617021276594%;
+}
+.row-fluid .span10 {
+width: 82.97872340425532%;
+*width: 82.92553191489361%;
+}
+.row-fluid .span9 {
+width: 74.46808510638297%;
+*width: 74.41489361702126%;
+}
+.row-fluid .span8 {
+width: 65.95744680851064%;
+*width: 65.90425531914893%;
+}
+.row-fluid .span7 {
+width: 57.44680851063829%;
+*width: 57.39361702127659%;
+}
+.row-fluid .span6 {
+width: 48.93617021276595%;
+*width: 48.88297872340425%;
+}
+.row-fluid .span5 {
+width: 40.42553191489362%;
+*width: 40.37234042553192%;
+}
+.row-fluid .span4 {
+width: 31.914893617021278%;
+*width: 31.861702127659576%;
+}
+.row-fluid .span3 {
+width: 23.404255319148934%;
+*width: 23.351063829787233%;
+}
+.row-fluid .span2 {
+width: 14.893617021276595%;
+*width: 14.840425531914894%;
+}
+.row-fluid .span1 {
+width: 6.382978723404255%;
+*width: 6.329787234042553%;
+}
+.row-fluid .offset12 {
+margin-left: 104.25531914893617%;
+*margin-left: 104.14893617021275%;
+}
+.row-fluid .offset12:first-child {
+margin-left: 102.12765957446808%;
+*margin-left: 102.02127659574467%;
+}
+.row-fluid .offset11 {
+margin-left: 95.74468085106382%;
+*margin-left: 95.6382978723404%;
+}
+.row-fluid .offset11:first-child {
+margin-left: 93.61702127659574%;
+*margin-left: 93.51063829787232%;
+}
+.row-fluid .offset10 {
+margin-left: 87.23404255319149%;
+*margin-left: 87.12765957446807%;
+}
+.row-fluid .offset10:first-child {
+margin-left: 85.1063829787234%;
+*margin-left: 84.99999999999999%;
+}
+.row-fluid .offset9 {
+margin-left: 78.72340425531914%;
+*margin-left: 78.61702127659572%;
+}
+.row-fluid .offset9:first-child {
+margin-left: 76.59574468085106%;
+*margin-left: 76.48936170212764%;
+}
+.row-fluid .offset8 {
+margin-left: 70.2127659574468%;
+*margin-left: 70.10638297872339%;
+}
+.row-fluid .offset8:first-child {
+margin-left: 68.08510638297872%;
+*margin-left: 67.9787234042553%;
+}
+.row-fluid .offset7 {
+margin-left: 61.70212765957446%;
+*margin-left: 61.59574468085106%;
+}
+.row-fluid .offset7:first-child {
+margin-left: 59.574468085106375%;
+*margin-left: 59.46808510638297%;
+}
+.row-fluid .offset6 {
+margin-left: 53.191489361702125%;
+*margin-left: 53.085106382978715%;
+}
+.row-fluid .offset6:first-child {
+margin-left: 51.063829787234035%;
+*margin-left: 50.95744680851063%;
+}
+.row-fluid .offset5 {
+margin-left: 44.68085106382979%;
+*margin-left: 44.57446808510638%;
+}
+.row-fluid .offset5:first-child {
+margin-left: 42.5531914893617%;
+*margin-left: 42.4468085106383%;
+}
+.row-fluid .offset4 {
+margin-left: 36.170212765957444%;
+*margin-left: 36.06382978723405%;
+}
+.row-fluid .offset4:first-child {
+margin-left: 34.04255319148936%;
+*margin-left: 33.93617021276596%;
+}
+.row-fluid .offset3 {
+margin-left: 27.659574468085104%;
+*margin-left: 27.5531914893617%;
+}
+.row-fluid .offset3:first-child {
+margin-left: 25.53191489361702%;
+*margin-left: 25.425531914893618%;
+}
+.row-fluid .offset2 {
+margin-left: 19.148936170212764%;
+*margin-left: 19.04255319148936%;
+}
+.row-fluid .offset2:first-child {
+margin-left: 17.02127659574468%;
+*margin-left: 16.914893617021278%;
+}
+.row-fluid .offset1 {
+margin-left: 10.638297872340425%;
+*margin-left: 10.53191489361702%;
+}
+.row-fluid .offset1:first-child {
+margin-left: 8.51063829787234%;
+*margin-left: 8.404255319148938%;
+}
+[class*="span"].hide,
+.row-fluid [class*="span"].hide {
+display: none;
+}
+[class*="span"].pull-right,
+.row-fluid [class*="span"].pull-right {
+float: right;
+}
+.container {
+margin-right: auto;
+margin-left: auto;
+*zoom: 1;
+}
+.container:before,
+.container:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.container:after {
+clear: both;
+}
+.container-fluid {
+padding-right: 20px;
+padding-left: 20px;
+*zoom: 1;
+}
+.container-fluid:before,
+.container-fluid:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.container-fluid:after {
+clear: both;
+}
+p {
+margin: 0 0 10px;
+}
+.lead {
+margin-bottom: 20px;
+font-size: 21px;
+font-weight: 200;
+line-height: 30px;
+}
+small {
+font-size: 85%;
+}
+strong {
+font-weight: bold;
+}
+em {
+font-style: italic;
+}
+cite {
+font-style: normal;
+}
+.muted {
+color: #999999;
+}
+a.muted:hover,
+a.muted:focus {
+color: #808080;
+}
+.text-warning {
+color: #c09853;
+}
+a.text-warning:hover,
+a.text-warning:focus {
+color: #a47e3c;
+}
+.text-error {
+color: #b94a48;
+}
+a.text-error:hover,
+a.text-error:focus {
+color: #953b39;
+}
+.text-info {
+color: #3a87ad;
+}
+a.text-info:hover,
+a.text-info:focus {
+color: #2d6987;
+}
+.text-success {
+color: #468847;
+}
+a.text-success:hover,
+a.text-success:focus {
+color: #356635;
+}
+.text-left {
+text-align: left;
+}
+.text-right {
+text-align: right;
+}
+.text-center {
+text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin: 10px 0;
+font-family: inherit;
+font-weight: bold;
+line-height: 20px;
+color: inherit;
+text-rendering: optimizelegibility;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+font-weight: normal;
+line-height: 1;
+color: #999999;
+}
+h1,
+h2,
+h3 {
+line-height: 40px;
+}
+h1 {
+font-size: 38.5px;
+}
+h2 {
+font-size: 31.5px;
+}
+h3 {
+font-size: 24.5px;
+}
+h4 {
+font-size: 17.5px;
+}
+h5 {
+font-size: 14px;
+}
+h6 {
+font-size: 11.9px;
+}
+h1 small {
+font-size: 24.5px;
+}
+h2 small {
+font-size: 17.5px;
+}
+h3 small {
+font-size: 14px;
+}
+h4 small {
+font-size: 14px;
+}
+.page-header {
+padding-bottom: 9px;
+margin: 20px 0 30px;
+border-bottom: 1px solid #eeeeee;
+}
+ul,
+ol {
+padding: 0;
+margin: 0 0 10px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-bottom: 0;
+}
+li {
+line-height: 20px;
+}
+ul.unstyled,
+ol.unstyled {
+margin-left: 0;
+list-style: none;
+}
+ul.inline,
+ol.inline {
+margin-left: 0;
+list-style: none;
+}
+ul.inline > li,
+ol.inline > li {
+display: inline-block;
+*display: inline;
+
+*zoom: 1;
+padding-left: 5px;
+padding-right: 5px;
+}
+dl {
+margin-bottom: 20px;
+}
+dt,
+dd {
+line-height: 20px;
+}
+dt {
+font-weight: bold;
+}
+dd {
+margin-left: 10px;
+}
+.dl-horizontal {
+*zoom: 1;
+}
+.dl-horizontal:before,
+.dl-horizontal:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.dl-horizontal:after {
+clear: both;
+}
+.dl-horizontal dt {
+float: left;
+width: 160px;
+clear: left;
+text-align: right;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.dl-horizontal dd {
+margin-left: 180px;
+}
+hr {
+margin: 20px 0;
+border: 0;
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid #ffffff;
+}
+abbr[title],
+abbr[data-original-title] {
+cursor: help;
+border-bottom: 1px dotted #999999;
+}
+abbr.initialism {
+font-size: 90%;
+text-transform: uppercase;
+}
+blockquote {
+padding: 0 0 0 15px;
+margin: 0 0 20px;
+border-left: 5px solid #eeeeee;
+}
+blockquote p {
+margin-bottom: 0;
+font-size: 17.5px;
+font-weight: 300;
+line-height: 1.25;
+}
+blockquote small {
+display: block;
+line-height: 20px;
+color: #999999;
+}
+blockquote small:before {
+content: '\2014 \00A0';
+}
+blockquote.pull-right {
+float: right;
+padding-right: 15px;
+padding-left: 0;
+border-right: 5px solid #eeeeee;
+border-left: 0;
+}
+blockquote.pull-right p,
+blockquote.pull-right small {
+text-align: right;
+}
+blockquote.pull-right small:before {
+content: '';
+}
+blockquote.pull-right small:after {
+content: '\00A0 \2014';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+content: "";
+}
+address {
+display: block;
+margin-bottom: 20px;
+font-style: normal;
+line-height: 20px;
+}
+code,
+pre {
+padding: 0 3px 2px;
+font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+font-size: 12px;
+color: #333333;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+code {
+padding: 2px 4px;
+color: #d14;
+background-color: #f7f7f9;
+border: 1px solid #e1e1e8;
+white-space: nowrap;
+}
+pre {
+display: block;
+padding: 9.5px;
+margin: 0 0 10px;
+font-size: 13px;
+line-height: 20px;
+word-break: break-all;
+word-wrap: break-word;
+white-space: pre;
+white-space: pre-wrap;
+background-color: #f5f5f5;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.15);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+pre.prettyprint {
+margin-bottom: 20px;
+}
+pre code {
+padding: 0;
+color: inherit;
+white-space: pre;
+white-space: pre-wrap;
+background-color: transparent;
+border: 0;
+}
+.pre-scrollable {
+max-height: 340px;
+overflow-y: scroll;
+}
+table {
+max-width: 100%;
+background-color: transparent;
+border-collapse: collapse;
+border-spacing: 0;
+}
+.table {
+width: 100%;
+margin-bottom: 20px;
+}
+.table th,
+.table td {
+padding: 8px;
+line-height: 20px;
+text-align: left;
+vertical-align: top;
+border-top: 1px solid #dddddd;
+}
+.table th {
+font-weight: bold;
+}
+.table thead th {
+vertical-align: bottom;
+}
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+border-top: 0;
+}
+.table tbody + tbody {
+border-top: 2px solid #dddddd;
+}
+.table .table {
+background-color: #ffffff;
+}
+.table-condensed th,
+.table-condensed td {
+padding: 4px 5px;
+}
+.table-bordered {
+border: 1px solid #dddddd;
+border-collapse: separate;
+*border-collapse: collapse;
+border-left: 0;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.table-bordered th,
+.table-bordered td {
+border-left: 1px solid #dddddd;
+}
+.table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+border-top: 0;
+}
+.table-bordered thead:first-child tr:first-child > th:first-child,
+.table-bordered tbody:first-child tr:first-child > td:first-child,
+.table-bordered tbody:first-child tr:first-child > th:first-child {
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+}
+.table-bordered thead:first-child tr:first-child > th:last-child,
+.table-bordered tbody:first-child tr:first-child > td:last-child,
+.table-bordered tbody:first-child tr:first-child > th:last-child {
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+}
+.table-bordered thead:last-child tr:last-child > th:first-child,
+.table-bordered tbody:last-child tr:last-child > td:first-child,
+.table-bordered tbody:last-child tr:last-child > th:first-child,
+.table-bordered tfoot:last-child tr:last-child > td:first-child,
+.table-bordered tfoot:last-child tr:last-child > th:first-child {
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-left-radius: 4px;
+}
+.table-bordered thead:last-child tr:last-child > th:last-child,
+.table-bordered tbody:last-child tr:last-child > td:last-child,
+.table-bordered tbody:last-child tr:last-child > th:last-child,
+.table-bordered tfoot:last-child tr:last-child > td:last-child,
+.table-bordered tfoot:last-child tr:last-child > th:last-child {
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;
+}
+.table-bordered tfoot + tbody:last-child tr:last-child td:first-child {
+-webkit-border-bottom-left-radius: 0;
+-moz-border-radius-bottomleft: 0;
+border-bottom-left-radius: 0;
+}
+.table-bordered tfoot + tbody:last-child tr:last-child td:last-child {
+-webkit-border-bottom-right-radius: 0;
+-moz-border-radius-bottomright: 0;
+border-bottom-right-radius: 0;
+}
+.table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+}
+.table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+}
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+background-color: #f9f9f9;
+}
+.table-hover tbody tr:hover > td,
+.table-hover tbody tr:hover > th {
+background-color: #f5f5f5;
+}
+table td[class*="span"],
+table th[class*="span"],
+.row-fluid table td[class*="span"],
+.row-fluid table th[class*="span"] {
+display: table-cell;
+float: none;
+margin-left: 0;
+}
+.table td.span1,
+.table th.span1 {
+float: none;
+width: 44px;
+margin-left: 0;
+}
+.table td.span2,
+.table th.span2 {
+float: none;
+width: 124px;
+margin-left: 0;
+}
+.table td.span3,
+.table th.span3 {
+float: none;
+width: 204px;
+margin-left: 0;
+}
+.table td.span4,
+.table th.span4 {
+float: none;
+width: 284px;
+margin-left: 0;
+}
+.table td.span5,
+.table th.span5 {
+float: none;
+width: 364px;
+margin-left: 0;
+}
+.table td.span6,
+.table th.span6 {
+float: none;
+width: 444px;
+margin-left: 0;
+}
+.table td.span7,
+.table th.span7 {
+float: none;
+width: 524px;
+margin-left: 0;
+}
+.table td.span8,
+.table th.span8 {
+float: none;
+width: 604px;
+margin-left: 0;
+}
+.table td.span9,
+.table th.span9 {
+float: none;
+width: 684px;
+margin-left: 0;
+}
+.table td.span10,
+.table th.span10 {
+float: none;
+width: 764px;
+margin-left: 0;
+}
+.table td.span11,
+.table th.span11 {
+float: none;
+width: 844px;
+margin-left: 0;
+}
+.table td.span12,
+.table th.span12 {
+float: none;
+width: 924px;
+margin-left: 0;
+}
+.table tbody tr.success > td {
+background-color: #dff0d8;
+}
+.table tbody tr.error > td {
+background-color: #f2dede;
+}
+.table tbody tr.warning > td {
+background-color: #fcf8e3;
+}
+.table tbody tr.info > td {
+background-color: #d9edf7;
+}
+.table-hover tbody tr.success:hover > td {
+background-color: #d0e9c6;
+}
+.table-hover tbody tr.error:hover > td {
+background-color: #ebcccc;
+}
+.table-hover tbody tr.warning:hover > td {
+background-color: #faf2cc;
+}
+.table-hover tbody tr.info:hover > td {
+background-color: #c4e3f3;
+}
+.nav {
+margin-left: 0;
+margin-bottom: 20px;
+list-style: none;
+}
+.nav > li > a {
+display: block;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+text-decoration: none;
+background-color: #eeeeee;
+}
+.nav > li > a > img {
+max-width: none;
+}
+.nav > .pull-right {
+float: right;
+}
+.nav-header {
+display: block;
+padding: 3px 15px;
+font-size: 11px;
+font-weight: bold;
+line-height: 20px;
+color: #999999;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+text-transform: uppercase;
+}
+.nav li + .nav-header {
+margin-top: 9px;
+}
+.nav-list {
+padding-left: 15px;
+padding-right: 15px;
+margin-bottom: 0;
+}
+.nav-list > li > a,
+.nav-list .nav-header {
+margin-left: -15px;
+margin-right: -15px;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.nav-list > li > a {
+padding: 3px 15px;
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+background-color: #0088cc;
+}
+.nav-list [class^="icon-"],
+.nav-list [class*=" icon-"] {
+margin-right: 2px;
+}
+.nav-list .divider {
+*width: 100%;
+height: 1px;
+margin: 9px 1px;
+*margin: -5px 0 5px;
+overflow: hidden;
+background-color: #e5e5e5;
+border-bottom: 1px solid #ffffff;
+}
+.nav-tabs,
+.nav-pills {
+*zoom: 1;
+}
+.nav-tabs:before,
+.nav-pills:before,
+.nav-tabs:after,
+.nav-pills:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.nav-tabs:after,
+.nav-pills:after {
+clear: both;
+}
+.nav-tabs > li,
+.nav-pills > li {
+float: left;
+}
+.nav-tabs > li > a,
+.nav-pills > li > a {
+padding-right: 12px;
+padding-left: 12px;
+margin-right: 2px;
+line-height: 14px;
+}
+.nav-tabs {
+border-bottom: 1px solid #ddd;
+}
+.nav-tabs > li {
+margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+padding-top: 8px;
+padding-bottom: 8px;
+line-height: 20px;
+border: 1px solid transparent;
+-webkit-border-radius: 4px 4px 0 0;
+-moz-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+border-color: #eeeeee #eeeeee #dddddd;
+}
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+color: #555555;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-bottom-color: transparent;
+cursor: default;
+}
+.nav-pills > li > a {
+padding-top: 8px;
+padding-bottom: 8px;
+margin-top: 2px;
+margin-bottom: 2px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+color: #ffffff;
+background-color: #0088cc;
+}
+.nav-stacked > li {
+float: none;
+}
+.nav-stacked > li > a {
+margin-right: 0;
+}
+.nav-tabs.nav-stacked {
+border-bottom: 0;
+}
+.nav-tabs.nav-stacked > li > a {
+border: 1px solid #ddd;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+.nav-tabs.nav-stacked > li:first-child > a {
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+}
+.nav-tabs.nav-stacked > li:last-child > a {
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-left-radius: 4px;
+}
+.nav-tabs.nav-stacked > li > a:hover,
+.nav-tabs.nav-stacked > li > a:focus {
+border-color: #ddd;
+z-index: 2;
+}
+.nav-pills.nav-stacked > li > a {
+margin-bottom: 3px;
+}
+.nav-pills.nav-stacked > li:last-child > a {
+margin-bottom: 1px;
+}
+.nav-tabs .dropdown-menu {
+-webkit-border-radius: 0 0 6px 6px;
+-moz-border-radius: 0 0 6px 6px;
+border-radius: 0 0 6px 6px;
+}
+.nav-pills .dropdown-menu {
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+.nav .dropdown-toggle .caret {
+border-top-color: #0088cc;
+border-bottom-color: #0088cc;
+margin-top: 6px;
+}
+.nav .dropdown-toggle:hover .caret,
+.nav .dropdown-toggle:focus .caret {
+border-top-color: #005580;
+border-bottom-color: #005580;
+}
+
+.nav-tabs .dropdown-toggle .caret {
+margin-top: 8px;
+}
+.nav .active .dropdown-toggle .caret {
+border-top-color: #fff;
+border-bottom-color: #fff;
+}
+.nav-tabs .active .dropdown-toggle .caret {
+border-top-color: #555555;
+border-bottom-color: #555555;
+}
+.nav > .dropdown.active > a:hover,
+.nav > .dropdown.active > a:focus {
+cursor: pointer;
+}
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover,
+.nav > li.dropdown.open.active > a:focus {
+color: #ffffff;
+background-color: #999999;
+border-color: #999999;
+}
+.nav li.dropdown.open .caret,
+.nav li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret,
+.nav li.dropdown.open a:focus .caret {
+border-top-color: #ffffff;
+border-bottom-color: #ffffff;
+opacity: 1;
+filter: alpha(opacity=100);
+}
+.tabs-stacked .open > a:hover,
+.tabs-stacked .open > a:focus {
+border-color: #999999;
+}
+.tabbable {
+*zoom: 1;
+}
+.tabbable:before,
+.tabbable:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.tabbable:after {
+clear: both;
+}
+.tab-content {
+overflow: auto;
+}
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+border-bottom: 0;
+}
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+display: none;
+}
+.tab-content > .active,
+.pill-content > .active {
+display: block;
+}
+.tabs-below > .nav-tabs {
+border-top: 1px solid #ddd;
+}
+.tabs-below > .nav-tabs > li {
+margin-top: -1px;
+margin-bottom: 0;
+}
+.tabs-below > .nav-tabs > li > a {
+-webkit-border-radius: 0 0 4px 4px;
+-moz-border-radius: 0 0 4px 4px;
+border-radius: 0 0 4px 4px;
+}
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+border-bottom-color: transparent;
+border-top-color: #ddd;
+}
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+border-color: transparent #ddd #ddd #ddd;
+}
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+float: none;
+}
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+min-width: 74px;
+margin-right: 0;
+margin-bottom: 3px;
+}
+.tabs-left > .nav-tabs {
+float: left;
+margin-right: 19px;
+border-right: 1px solid #ddd;
+}
+.tabs-left > .nav-tabs > li > a {
+margin-right: -1px;
+-webkit-border-radius: 4px 0 0 4px;
+-moz-border-radius: 4px 0 0 4px;
+border-radius: 4px 0 0 4px;
+}
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+border-color: #ddd transparent #ddd #ddd;
+*border-right-color: #ffffff;
+}
+.tabs-right > .nav-tabs {
+float: right;
+margin-left: 19px;
+border-left: 1px solid #ddd;
+}
+.tabs-right > .nav-tabs > li > a {
+margin-left: -1px;
+-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;
+}
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+border-color: #ddd #ddd #ddd transparent;
+*border-left-color: #ffffff;
+}
+.nav > .disabled > a {
+color: #999999;
+}
+.nav > .disabled > a:hover,
+.nav > .disabled > a:focus {
+text-decoration: none;
+background-color: transparent;
+cursor: default;
+}
+.navbar {
+overflow: visible;
+margin-bottom: 20px;
+*position: relative;
+*z-index: 2;
+}
+.navbar-inner {
+min-height: 40px;
+padding-left: 20px;
+padding-right: 20px;
+background-color: #fafafa;
+background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+border: 1px solid #d4d4d4;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+*zoom: 1;
+}
+.navbar-inner:before,
+.navbar-inner:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.navbar-inner:after {
+clear: both;
+}
+.navbar .container {
+width: auto;
+}
+.nav-collapse.collapse {
+height: auto;
+overflow: visible;
+}
+.navbar .brand {
+float: left;
+display: block;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+color: #777777;
+text-shadow: 0 1px 0 #ffffff;
+}
+.navbar .brand:hover,
+.navbar .brand:focus {
+text-decoration: none;
+}
+.navbar-text {
+margin-bottom: 0;
+line-height: 40px;
+color: #777777;
+}
+.navbar-link {
+color: #777777;
+}
+.navbar-link:hover,
+.navbar-link:focus {
+color: #333333;
+}
+.navbar .divider-vertical {
+height: 40px;
+margin: 0 9px;
+border-left: 1px solid #f2f2f2;
+border-right: 1px solid #ffffff;
+}
+.navbar .btn,
+.navbar .btn-group {
+margin-top: 5px;
+}
+.navbar .btn-group .btn,
+.navbar .input-prepend .btn,
+.navbar .input-append .btn,
+.navbar .input-prepend .btn-group,
+.navbar .input-append .btn-group {
+margin-top: 0;
+}
+.navbar-form {
+margin-bottom: 0;
+*zoom: 1;
+}
+.navbar-form:before,
+.navbar-form:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.navbar-form:after {
+clear: both;
+}
+.navbar-form input,
+.navbar-form select,
+.navbar-form .radio,
+.navbar-form .checkbox {
+margin-top: 5px;
+}
+.navbar-form input,
+.navbar-form select,
+.navbar-form .btn {
+display: inline-block;
+margin-bottom: 0;
+}
+.navbar-form input[type="image"],
+.navbar-form input[type="checkbox"],
+.navbar-form input[type="radio"] {
+margin-top: 3px;
+}
+.navbar-form .input-append,
+.navbar-form .input-prepend {
+margin-top: 5px;
+white-space: nowrap;
+}
+.navbar-form .input-append input,
+.navbar-form .input-prepend input {
+margin-top: 0;
+}
+.navbar-search {
+position: relative;
+float: left;
+margin-top: 5px;
+margin-bottom: 0;
+}
+.navbar-search .search-query {
+margin-bottom: 0;
+padding: 4px 14px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 13px;
+font-weight: normal;
+line-height: 1;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
+.navbar-static-top {
+position: static;
+margin-bottom: 0;
+}
+.navbar-static-top .navbar-inner {
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+position: fixed;
+right: 0;
+left: 0;
+z-index: 1030;
+margin-bottom: 0;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+border-width: 0 0 1px;
+}
+.navbar-fixed-bottom .navbar-inner {
+border-width: 1px 0 0;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+padding-left: 0;
+padding-right: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+width: 940px;
+}
+.navbar-fixed-top {
+top: 0;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+-webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+-moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+box-shadow: 0 1px 10px rgba(0,0,0,.1);
+}
+.navbar-fixed-bottom {
+bottom: 0;
+}
+.navbar-fixed-bottom .navbar-inner {
+-webkit-box-shadow: 0 -1px 10px rgba(0,0,0,.1);
+-moz-box-shadow: 0 -1px 10px rgba(0,0,0,.1);
+box-shadow: 0 -1px 10px rgba(0,0,0,.1);
+}
+.navbar .nav {
+position: relative;
+left: 0;
+display: block;
+float: left;
+margin: 0 10px 0 0;
+}
+.navbar .nav.pull-right {
+float: right;
+margin-right: 0;
+}
+.navbar .nav > li {
+float: left;
+}
+.navbar .nav > li > a {
+float: none;
+padding: 10px 15px 10px;
+color: #777777;
+text-decoration: none;
+text-shadow: 0 1px 0 #ffffff;
+}
+.navbar .nav .dropdown-toggle .caret {
+margin-top: 8px;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+background-color: transparent;
+color: #333333;
+text-decoration: none;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+color: #555555;
+text-decoration: none;
+background-color: #e5e5e5;
+-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+}
+.navbar .btn-navbar {
+display: none;
+float: right;
+padding: 7px 10px;
+margin-left: 5px;
+margin-right: 5px;
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #ededed;
+background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e5e5e5));
+background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5);
+background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5);
+background-image: linear-gradient(to bottom, #f2f2f2, #e5e5e5);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0);
+border-color: #e5e5e5 #e5e5e5 #bfbfbf;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+*background-color: #e5e5e5;
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+}
+.navbar .btn-navbar:hover,
+.navbar .btn-navbar:focus,
+.navbar .btn-navbar:active,
+.navbar .btn-navbar.active,
+.navbar .btn-navbar.disabled,
+.navbar .btn-navbar[disabled] {
+color: #ffffff;
+background-color: #e5e5e5;
+*background-color: #d9d9d9;
+}
+.navbar .btn-navbar:active,
+.navbar .btn-navbar.active {
+background-color: #cccccc \9;
+}
+.navbar .btn-navbar .icon-bar {
+display: block;
+width: 18px;
+height: 2px;
+background-color: #f5f5f5;
+-webkit-border-radius: 1px;
+-moz-border-radius: 1px;
+border-radius: 1px;
+-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-navbar .icon-bar + .icon-bar {
+margin-top: 3px;
+}
+.navbar .nav > li > .dropdown-menu:before {
+content: '';
+display: inline-block;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 7px solid #ccc;
+border-bottom-color: rgba(0, 0, 0, 0.2);
+position: absolute;
+top: -7px;
+left: 9px;
+}
+.navbar .nav > li > .dropdown-menu:after {
+content: '';
+display: inline-block;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+border-bottom: 6px solid #ffffff;
+position: absolute;
+top: -6px;
+left: 10px;
+}
+.navbar-fixed-bottom .nav > li > .dropdown-menu:before {
+border-top: 7px solid #ccc;
+border-top-color: rgba(0, 0, 0, 0.2);
+border-bottom: 0;
+bottom: -7px;
+top: auto;
+}
+.navbar-fixed-bottom .nav > li > .dropdown-menu:after {
+border-top: 6px solid #ffffff;
+border-bottom: 0;
+bottom: -6px;
+top: auto;
+}
+.navbar .nav li.dropdown > a:hover .caret,
+.navbar .nav li.dropdown > a:focus .caret {
+border-top-color: #333333;
+border-bottom-color: #333333;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+background-color: #e5e5e5;
+color: #555555;
+}
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+border-top-color: #777777;
+border-bottom-color: #777777;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+border-top-color: #555555;
+border-bottom-color: #555555;
+}
+.navbar .pull-right > li > .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right {
+left: auto;
+right: 0;
+}
+.navbar .pull-right > li > .dropdown-menu:before,
+.navbar .nav > li > .dropdown-menu.pull-right:before {
+left: auto;
+right: 12px;
+}
+.navbar .pull-right > li > .dropdown-menu:after,
+.navbar .nav > li > .dropdown-menu.pull-right:after {
+left: auto;
+right: 13px;
+}
+.navbar .pull-right > li > .dropdown-menu .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+left: auto;
+right: 100%;
+margin-left: 0;
+margin-right: -1px;
+-webkit-border-radius: 6px 0 6px 6px;
+-moz-border-radius: 6px 0 6px 6px;
+border-radius: 6px 0 6px 6px;
+}
+.navbar-inverse .navbar-inner {
+background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #222222, #111111);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+border-color: #252525;
+}
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+color: #999999;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .brand:focus,
+.navbar-inverse .nav > li > a:focus {
+color: #ffffff;
+}
+.navbar-inverse .brand {
+color: #999999;
+}
+.navbar-inverse .navbar-text {
+color: #999999;
+}
+.navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover {
+background-color: transparent;
+color: #ffffff;
+}
+.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus {
+color: #ffffff;
+background-color: #111111;
+}
+.navbar-inverse .navbar-link {
+color: #999999;
+}
+.navbar-inverse .navbar-link:hover,
+.navbar-inverse .navbar-link:focus {
+color: #ffffff;
+}
+.navbar-inverse .divider-vertical {
+border-left-color: #111111;
+border-right-color: #222222;
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+background-color: #111111;
+color: #ffffff;
+}
+.navbar-inverse .nav li.dropdown > a:hover .caret,
+.navbar-inverse .nav li.dropdown > a:focus .caret {
+border-top-color: #ffffff;
+border-bottom-color: #ffffff;
+}
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+border-top-color: #999999;
+border-bottom-color: #999999;
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret {
+border-top-color: #ffffff;
+border-bottom-color: #ffffff;
+}
+.navbar-inverse .navbar-search .search-query {
+color: #ffffff;
+background-color: #515151;
+border-color: #111111;
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+transition: none;
+}
+.navbar-inverse .navbar-search .search-query:-moz-placeholder {
+color: #cccccc;
+}
+.navbar-inverse .navbar-search .search-query:-ms-input-placeholder {
+color: #cccccc;
+}
+.navbar-inverse .navbar-search .search-query::-webkit-input-placeholder {
+color: #cccccc;
+}
+.navbar-inverse .navbar-search .search-query:focus,
+.navbar-inverse .navbar-search .search-query.focused {
+padding: 5px 15px;
+color: #333333;
+text-shadow: 0 1px 0 #ffffff;
+background-color: #ffffff;
+border: 0;
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+outline: 0;
+}
+.navbar-inverse .btn-navbar {
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #0e0e0e;
+background-image: -moz-linear-gradient(top, #151515, #040404);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404));
+background-image: -webkit-linear-gradient(top, #151515, #040404);
+background-image: -o-linear-gradient(top, #151515, #040404);
+background-image: linear-gradient(to bottom, #151515, #040404);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff151515', endColorstr='#ff040404', GradientType=0);
+border-color: #040404 #040404 #000000;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+*background-color: #040404;
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.navbar-inverse .btn-navbar:hover,
+.navbar-inverse .btn-navbar:focus,
+.navbar-inverse .btn-navbar:active,
+.navbar-inverse .btn-navbar.active,
+.navbar-inverse .btn-navbar.disabled,
+.navbar-inverse .btn-navbar[disabled] {
+color: #ffffff;
+background-color: #040404;
+*background-color: #000000;
+}
+.navbar-inverse .btn-navbar:active,
+.navbar-inverse .btn-navbar.active {
+background-color: #000000 \9;
+}
+.well {
+min-height: 20px;
+padding: 19px;
+margin-bottom: 20px;
+background-color: #f5f5f5;
+border: 1px solid #e3e3e3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.well blockquote {
+border-color: #ddd;
+border-color: rgba(0, 0, 0, 0.15);
+}
+.well-large {
+padding: 24px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+.well-small {
+padding: 9px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+@-ms-viewport {
+width: device-width;
+}
+.hidden {
+display: none;
+visibility: hidden;
+}
+.visible-phone {
+display: none !important;
+}
+.visible-tablet {
+display: none !important;
+}
+.hidden-desktop {
+display: none !important;
+}
+.visible-desktop {
+display: inherit !important;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+.hidden-desktop {
+display: inherit !important;
+}
+.visible-desktop {
+display: none !important ;
+}
+.visible-tablet {
+display: inherit !important;
+}
+.hidden-tablet {
+display: none !important;
+}
+}
+@media (max-width: 767px) {
+.hidden-desktop {
+display: inherit !important;
+}
+.visible-desktop {
+display: none !important;
+}
+.visible-phone {
+display: inherit !important;
+}
+.hidden-phone {
+display: none !important;
+}
+}
+.visible-print {
+display: none !important;
+}
+@media print {
+.visible-print {
+display: inherit !important;
+}
+.hidden-print {
+display: none !important;
+}
+}
+@media (max-width: 767px) {
+body {
+padding-left: 20px;
+padding-right: 20px;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom,
+.navbar-static-top {
+margin-left: -20px;
+margin-right: -20px;
+}
+.container-fluid {
+padding: 0;
+}
+.dl-horizontal dt {
+float: none;
+clear: none;
+width: auto;
+text-align: left;
+}
+.dl-horizontal dd {
+margin-left: 0;
+}
+.container {
+width: auto;
+}
+.row-fluid {
+width: 100%;
+}
+.row,
+.thumbnails {
+margin-left: 0;
+}
+.thumbnails > li {
+float: none;
+margin-left: 0;
+}
+[class*="span"],
+.uneditable-input[class*="span"],
+.row-fluid [class*="span"] {
+float: none;
+display: block;
+width: 100%;
+margin-left: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.span12,
+.row-fluid .span12 {
+width: 100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.row-fluid [class*="offset"]:first-child {
+margin-left: 0;
+}
+.input-large,
+.input-xlarge,
+.input-xxlarge,
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input {
+display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.input-prepend input,
+.input-append input,
+.input-prepend input[class*="span"],
+.input-append input[class*="span"] {
+display: inline-block;
+width: auto;
+}
+.controls-row [class*="span"] + [class*="span"] {
+margin-left: 0;
+}
+.modal {
+position: fixed;
+top: 20px;
+left: 20px;
+right: 20px;
+width: auto;
+margin: 0;
+}
+.modal.fade {
+top: -100px;
+}
+.modal.fade.in {
+top: 20px;
+}
+}
+@media (max-width: 480px) {
+.nav-collapse {
+-webkit-transform: translate3d(0, 0, 0);
+}
+.page-header h1 small {
+display: block;
+line-height: 20px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+border: 1px solid #ccc;
+}
+.form-horizontal .control-label {
+float: none;
+width: auto;
+padding-top: 0;
+text-align: left;
+}
+.form-horizontal .controls {
+margin-left: 0;
+}
+.form-horizontal .control-list {
+padding-top: 0;
+}
+.form-horizontal .form-actions {
+padding-left: 10px;
+padding-right: 10px;
+}
+.media .pull-left,
+.media .pull-right {
+float: none;
+display: block;
+margin-bottom: 10px;
+}
+.media-object {
+margin-right: 0;
+margin-left: 0;
+}
+.modal {
+top: 10px;
+left: 10px;
+right: 10px;
+}
+.modal-header .close {
+padding: 10px;
+margin: -10px;
+}
+.carousel-caption {
+position: static;
+}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+.row {
+margin-left: -20px;
+*zoom: 1;
+}
+.row:before,
+.row:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.row:after {
+clear: both;
+}
+[class*="span"] {
+float: left;
+min-height: 1px;
+margin-left: 20px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+width: 724px;
+}
+.span12 {
+width: 724px;
+}
+.span11 {
+width: 662px;
+}
+.span10 {
+width: 600px;
+}
+.span9 {
+width: 538px;
+}
+.span8 {
+width: 476px;
+}
+.span7 {
+width: 414px;
+}
+.span6 {
+width: 352px;
+}
+.span5 {
+width: 290px;
+}
+.span4 {
+width: 228px;
+}
+.span3 {
+width: 166px;
+}
+.span2 {
+width: 104px;
+}
+.span1 {
+width: 42px;
+}
+.offset12 {
+margin-left: 764px;
+}
+.offset11 {
+margin-left: 702px;
+}
+.offset10 {
+margin-left: 640px;
+}
+.offset9 {
+margin-left: 578px;
+}
+.offset8 {
+margin-left: 516px;
+}
+.offset7 {
+margin-left: 454px;
+}
+.offset6 {
+margin-left: 392px;
+}
+.offset5 {
+margin-left: 330px;
+}
+.offset4 {
+margin-left: 268px;
+}
+.offset3 {
+margin-left: 206px;
+}
+.offset2 {
+margin-left: 144px;
+}
+.offset1 {
+margin-left: 82px;
+}
+.row-fluid {
+width: 100%;
+*zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.row-fluid:after {
+clear: both;
+}
+.row-fluid [class*="span"] {
+display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+float: left;
+margin-left: 2.7624309392265194%;
+*margin-left: 2.709239449864817%;
+}
+.row-fluid [class*="span"]:first-child {
+margin-left: 0;
+}
+.row-fluid .controls-row [class*="span"] + [class*="span"] {
+margin-left: 2.7624309392265194%;
+}
+.row-fluid .span12 {
+width: 100%;
+*width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+width: 91.43646408839778%;
+*width: 91.38327259903608%;
+}
+.row-fluid .span10 {
+width: 82.87292817679558%;
+*width: 82.81973668743387%;
+}
+.row-fluid .span9 {
+width: 74.30939226519337%;
+*width: 74.25620077583166%;
+}
+.row-fluid .span8 {
+width: 65.74585635359117%;
+*width: 65.69266486422946%;
+}
+.row-fluid .span7 {
+width: 57.18232044198895%;
+*width: 57.12912895262725%;
+}
+.row-fluid .span6 {
+width: 48.61878453038674%;
+*width: 48.56559304102504%;
+}
+.row-fluid .span5 {
+width: 40.05524861878453%;
+*width: 40.00205712942283%;
+}
+.row-fluid .span4 {
+width: 31.491712707182323%;
+*width: 31.43852121782062%;
+}
+.row-fluid .span3 {
+width: 22.92817679558011%;
+*width: 22.87498530621841%;
+}
+.row-fluid .span2 {
+width: 14.3646408839779%;
+*width: 14.311449394616199%;
+}
+.row-fluid .span1 {
+width: 5.801104972375691%;
+*width: 5.747913483013988%;
+}
+.row-fluid .offset12 {
+margin-left: 105.52486187845304%;
+*margin-left: 105.41847889972962%;
+}
+.row-fluid .offset12:first-child {
+margin-left: 102.76243093922652%;
+*margin-left: 102.6560479605031%;
+}
+.row-fluid .offset11 {
+margin-left: 96.96132596685082%;
+*margin-left: 96.8549429881274%;
+}
+.row-fluid .offset11:first-child {
+margin-left: 94.1988950276243%;
+*margin-left: 94.09251204890089%;
+}
+.row-fluid .offset10 {
+margin-left: 88.39779005524862%;
+*margin-left: 88.2914070765252%;
+}
+.row-fluid .offset10:first-child {
+margin-left: 85.6353591160221%;
+*margin-left: 85.52897613729868%;
+}
+.row-fluid .offset9 {
+margin-left: 79.8342541436464%;
+*margin-left: 79.72787116492299%;
+}
+.row-fluid .offset9:first-child {
+margin-left: 77.07182320441989%;
+*margin-left: 76.96544022569647%;
+}
+.row-fluid .offset8 {
+margin-left: 71.2707182320442%;
+*margin-left: 71.16433525332079%;
+}
+.row-fluid .offset8:first-child {
+margin-left: 68.50828729281768%;
+*margin-left: 68.40190431409427%;
+}
+.row-fluid .offset7 {
+margin-left: 62.70718232044199%;
+*margin-left: 62.600799341718584%;
+}
+.row-fluid .offset7:first-child {
+margin-left: 59.94475138121547%;
+*margin-left: 59.838368402492065%;
+}
+.row-fluid .offset6 {
+margin-left: 54.14364640883978%;
+*margin-left: 54.037263430116376%;
+}
+.row-fluid .offset6:first-child {
+margin-left: 51.38121546961326%;
+*margin-left: 51.27483249088986%;
+}
+.row-fluid .offset5 {
+margin-left: 45.58011049723757%;
+*margin-left: 45.47372751851417%;
+}
+.row-fluid .offset5:first-child {
+margin-left: 42.81767955801105%;
+*margin-left: 42.71129657928765%;
+}
+.row-fluid .offset4 {
+margin-left: 37.01657458563536%;
+*margin-left: 36.91019160691196%;
+}
+.row-fluid .offset4:first-child {
+margin-left: 34.25414364640884%;
+*margin-left: 34.14776066768544%;
+}
+.row-fluid .offset3 {
+margin-left: 28.45303867403315%;
+*margin-left: 28.346655695309746%;
+}
+.row-fluid .offset3:first-child {
+margin-left: 25.69060773480663%;
+*margin-left: 25.584224756083227%;
+}
+.row-fluid .offset2 {
+margin-left: 19.88950276243094%;
+*margin-left: 19.783119783707537%;
+}
+.row-fluid .offset2:first-child {
+margin-left: 17.12707182320442%;
+*margin-left: 17.02068884448102%;
+}
+.row-fluid .offset1 {
+margin-left: 11.32596685082873%;
+*margin-left: 11.219583872105325%;
+}
+.row-fluid .offset1:first-child {
+margin-left: 8.56353591160221%;
+*margin-left: 8.457152932878806%;
+}
+input,
+textarea,
+.uneditable-input {
+margin-left: 0;
+}
+.controls-row [class*="span"] + [class*="span"] {
+margin-left: 20px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+width: 710px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+width: 648px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+width: 586px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+width: 524px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+width: 462px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+width: 400px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+width: 338px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+width: 276px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+width: 214px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+width: 152px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+width: 90px;
+}
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+width: 28px;
+}
+}
+@media (min-width: 1200px) {
+.row {
+margin-left: -30px;
+*zoom: 1;
+}
+.row:before,
+.row:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.row:after {
+clear: both;
+}
+[class*="span"] {
+float: left;
+min-height: 1px;
+margin-left: 30px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+width: 1170px;
+}
+.span12 {
+width: 1170px;
+}
+.span11 {
+width: 1070px;
+}
+.span10 {
+width: 970px;
+}
+.span9 {
+width: 870px;
+}
+.span8 {
+width: 770px;
+}
+.span7 {
+width: 670px;
+}
+.span6 {
+width: 570px;
+}
+.span5 {
+width: 470px;
+}
+.span4 {
+width: 370px;
+}
+.span3 {
+width: 270px;
+}
+.span2 {
+width: 170px;
+}
+.span1 {
+width: 70px;
+}
+.offset12 {
+margin-left: 1230px;
+}
+.offset11 {
+margin-left: 1130px;
+}
+.offset10 {
+margin-left: 1030px;
+}
+.offset9 {
+margin-left: 930px;
+}
+.offset8 {
+margin-left: 830px;
+}
+.offset7 {
+margin-left: 730px;
+}
+.offset6 {
+margin-left: 630px;
+}
+.offset5 {
+margin-left: 530px;
+}
+.offset4 {
+margin-left: 430px;
+}
+.offset3 {
+margin-left: 330px;
+}
+.offset2 {
+margin-left: 230px;
+}
+.offset1 {
+margin-left: 130px;
+}
+.row-fluid {
+width: 100%;
+*zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+display: table;
+content: "";
+line-height: 0;
+}
+.row-fluid:after {
+clear: both;
+}
+.row-fluid [class*="span"] {
+display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+float: left;
+margin-left: 2.564102564102564%;
+*margin-left: 2.5109110747408616%;
+}
+.row-fluid [class*="span"]:first-child {
+margin-left: 0;
+}
+.row-fluid .controls-row [class*="span"] + [class*="span"] {
+margin-left: 2.564102564102564%;
+}
+.row-fluid .span12 {
+width: 100%;
+*width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+width: 91.45299145299145%;
+*width: 91.39979996362975%;
+}
+.row-fluid .span10 {
+width: 82.90598290598291%;
+*width: 82.8527914166212%;
+}
+.row-fluid .span9 {
+width: 74.35897435897436%;
+*width: 74.30578286961266%;
+}
+.row-fluid .span8 {
+width: 65.81196581196582%;
+*width: 65.75877432260411%;
+}
+.row-fluid .span7 {
+width: 57.26495726495726%;
+*width: 57.21176577559556%;
+}
+.row-fluid .span6 {
+width: 48.717948717948715%;
+*width: 48.664757228587014%;
+}
+.row-fluid .span5 {
+width: 40.17094017094017%;
+*width: 40.11774868157847%;
+}
+.row-fluid .span4 {
+width: 31.623931623931625%;
+*width: 31.570740134569924%;
+}
+.row-fluid .span3 {
+width: 23.076923076923077%;
+*width: 23.023731587561375%;
+}
+.row-fluid .span2 {
+width: 14.52991452991453%;
+*width: 14.476723040552828%;
+}
+.row-fluid .span1 {
+width: 5.982905982905983%;
+*width: 5.929714493544281%;
+}
+.row-fluid .offset12 {
+margin-left: 105.12820512820512%;
+*margin-left: 105.02182214948171%;
+}
+.row-fluid .offset12:first-child {
+margin-left: 102.56410256410257%;
+*margin-left: 102.45771958537915%;
+}
+.row-fluid .offset11 {
+margin-left: 96.58119658119658%;
+*margin-left: 96.47481360247316%;
+}
+.row-fluid .offset11:first-child {
+margin-left: 94.01709401709402%;
+*margin-left: 93.91071103837061%;
+}
+.row-fluid .offset10 {
+margin-left: 88.03418803418803%;
+*margin-left: 87.92780505546462%;
+}
+.row-fluid .offset10:first-child {
+margin-left: 85.47008547008548%;
+*margin-left: 85.36370249136206%;
+}
+.row-fluid .offset9 {
+margin-left: 79.48717948717949%;
+*margin-left: 79.38079650845607%;
+}
+.row-fluid .offset9:first-child {
+margin-left: 76.92307692307693%;
+*margin-left: 76.81669394435352%;
+}
+.row-fluid .offset8 {
+margin-left: 70.94017094017094%;
+*margin-left: 70.83378796144753%;
+}
+.row-fluid .offset8:first-child {
+margin-left: 68.37606837606839%;
+*margin-left: 68.26968539734497%;
+}
+.row-fluid .offset7 {
+margin-left: 62.393162393162385%;
+*margin-left: 62.28677941443899%;
+}
+.row-fluid .offset7:first-child {
+margin-left: 59.82905982905982%;
+*margin-left: 59.72267685033642%;
+}
+.row-fluid .offset6 {
+margin-left: 53.84615384615384%;
+*margin-left: 53.739770867430444%;
+}
+.row-fluid .offset6:first-child {
+margin-left: 51.28205128205128%;
+*margin-left: 51.175668303327875%;
+}
+.row-fluid .offset5 {
+margin-left: 45.299145299145295%;
+*margin-left: 45.1927623204219%;
+}
+.row-fluid .offset5:first-child {
+margin-left: 42.73504273504273%;
+*margin-left: 42.62865975631933%;
+}
+.row-fluid .offset4 {
+margin-left: 36.75213675213675%;
+*margin-left: 36.645753773413354%;
+}
+.row-fluid .offset4:first-child {
+margin-left: 34.18803418803419%;
+*margin-left: 34.081651209310785%;
+}
+.row-fluid .offset3 {
+margin-left: 28.205128205128204%;
+*margin-left: 28.0987452264048%;
+}
+.row-fluid .offset3:first-child {
+margin-left: 25.641025641025642%;
+*margin-left: 25.53464266230224%;
+}
+.row-fluid .offset2 {
+margin-left: 19.65811965811966%;
+*margin-left: 19.551736679396257%;
+}
+.row-fluid .offset2:first-child {
+margin-left: 17.094017094017094%;
+*margin-left: 16.98763411529369%;
+}
+.row-fluid .offset1 {
+margin-left: 11.11111111111111%;
+*margin-left: 11.004728132387708%;
+}
+.row-fluid .offset1:first-child {
+margin-left: 8.547008547008547%;
+*margin-left: 8.440625568285142%;
+}
+input,
+textarea,
+.uneditable-input {
+margin-left: 0;
+}
+.controls-row [class*="span"] + [class*="span"] {
+margin-left: 30px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+width: 1156px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+width: 1056px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+width: 956px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+width: 856px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+width: 756px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+width: 656px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+width: 556px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+width: 456px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+width: 356px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+width: 256px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+width: 156px;
+}
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+width: 56px;
+}
+.thumbnails {
+margin-left: -30px;
+}
+.thumbnails > li {
+margin-left: 30px;
+}
+.row-fluid .thumbnails {
+margin-left: 0;
+}
+}
+@media (max-width: 979px) {
+body {
+padding-top: 0;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+position: static;
+}
+.navbar-fixed-top {
+margin-bottom: 20px;
+}
+.navbar-fixed-bottom {
+margin-top: 20px;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+padding: 5px;
+}
+.navbar .container {
+width: auto;
+padding: 0;
+}
+.navbar .brand {
+padding-left: 10px;
+padding-right: 10px;
+margin: 0 0 0 -5px;
+}
+.nav-collapse {
+clear: both;
+}
+.nav-collapse .nav {
+float: none;
+margin: 0 0 10px;
+}
+.nav-collapse .nav > li {
+float: none;
+}
+.nav-collapse .nav > li > a {
+margin-bottom: 2px;
+}
+.nav-collapse .nav > .divider-vertical {
+display: none;
+}
+.nav-collapse .nav .nav-header {
+color: #777777;
+text-shadow: none;
+}
+.nav-collapse .nav > li > a,
+.nav-collapse .dropdown-menu a {
+padding: 9px 15px;
+font-weight: bold;
+color: #777777;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+.nav-collapse .btn {
+padding: 4px 10px 4px;
+font-weight: normal;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.nav-collapse .dropdown-menu li + li a {
+margin-bottom: 2px;
+}
+.nav-collapse .nav > li > a:hover,
+.nav-collapse .nav > li > a:focus,
+.nav-collapse .dropdown-menu a:hover,
+.nav-collapse .dropdown-menu a:focus {
+background-color: #f2f2f2;
+}
+.navbar-inverse .nav-collapse .nav > li > a,
+.navbar-inverse .nav-collapse .dropdown-menu a {
+color: #999999;
+}
+.navbar-inverse .nav-collapse .nav > li > a:hover,
+.navbar-inverse .nav-collapse .nav > li > a:focus,
+.navbar-inverse .nav-collapse .dropdown-menu a:hover,
+.navbar-inverse .nav-collapse .dropdown-menu a:focus {
+background-color: #111111;
+}
+.nav-collapse.in .btn-group {
+margin-top: 5px;
+padding: 0;
+}
+.nav-collapse .dropdown-menu {
+position: static;
+top: auto;
+left: auto;
+float: none;
+display: none;
+max-width: none;
+margin: 0 15px;
+padding: 0;
+background-color: transparent;
+border: none;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+.nav-collapse .open > .dropdown-menu {
+display: block;
+}
+.nav-collapse .dropdown-menu:before,
+.nav-collapse .dropdown-menu:after {
+display: none;
+}
+.nav-collapse .dropdown-menu .divider {
+display: none;
+}
+.nav-collapse .nav > li > .dropdown-menu:before,
+.nav-collapse .nav > li > .dropdown-menu:after {
+display: none;
+}
+.nav-collapse .navbar-form,
+.nav-collapse .navbar-search {
+float: none;
+padding: 10px 15px;
+margin: 10px 0;
+border-top: 1px solid #f2f2f2;
+border-bottom: 1px solid #f2f2f2;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+}
+.navbar-inverse .nav-collapse .navbar-form,
+.navbar-inverse .nav-collapse .navbar-search {
+border-top-color: #111111;
+border-bottom-color: #111111;
+}
+.navbar .nav-collapse .nav.pull-right {
+float: none;
+margin-left: 0;
+}
+.nav-collapse,
+.nav-collapse.collapse {
+overflow: hidden;
+height: 0;
+}
+.navbar .btn-navbar {
+display: block;
+}
+.navbar-static .navbar-inner {
+padding-left: 10px;
+padding-right: 10px;
+}
+}
+@media (min-width: 980px) {
+.nav-collapse.collapse {
+height: auto !important;
+overflow: visible !important;
+}
+}
+
+.doc-title { float: left; display: block; padding: 10px 20px 10px; margin-left: -20px;
+font-size: 20px; font-weight: 200; color: #777777; text-shadow: 0 1px 0 #ffffff; }
+.doc-info .navbar-text { padding: 0 15px; }
+h1 a { color: #333; } h2 a { color: #333; } h3 a { color: #333; }
+h4 a { color: #333; } h5 a { color: #333; } h6 a { color: #333; }
+h1:hover a { color: #333; } h2:hover a { color: #333; } h3:hover a { color: #333; }
+h4:hover a { color: #333; } h5:hover a { color: #333; } h6:hover a { color: #333; }
+.toc { margin-top: 10px; }
+.toc, .toc ul { padding: 0; }
+.toc ul { margin-left: 0; margin-bottom: 20px; list-style: none; }
+.toc ul > li > a { display: block; }
+.toc ul > li > a:hover,
+.toc ul > li > a:focus { text-decoration: none; background-color: #eeeeee; }
+.toc ul { margin-bottom: 0; }
+.toc ul > li > a, .toc ul > li > a { padding: 3px 15px; }</style>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+        <ul>
+          <li class="nav-header">Table of Contents</li>
+        </ul>
+        <ul>
+        <li><a href="#keystone-2019-day-1-2019-01-14">Keystone 2019 Day 1: 2019-01-14</a><ul>
+        <li><a href="#am---keynote-speaker---scott-fraser---usc">8:00am - Keynote speaker - Scott Fraser - USC</a></li>
+        <li><a href="#am---fabian-theis---munich">9:00am - Fabian Theis - Munich</a></li>
+        <li><a href="#am---rahul-satija---nygc">10:00am - Rahul Satija - NYGC</a></li>
+        <li><a href="#am---dana-peer---sloan-kettering-institute">10:30am - Dana Pe’er - Sloan Kettering Institute</a></li>
+        <li><a href="#am1200pm---morning-short-talks">11:15am–12:00pm - Morning short talks</a></li>
+        <li><a href="#pm400pm---afternoon-rapid-fire-talks">1:30pm–4:00pm - Afternoon rapid fire talks</a></li>
+        <li><a href="#pm430pm---panel-discussion">4:00pm–4:30pm - Panel discussion</a></li>
+        <li><a href="#day-1-reflection">Day 1 reflection</a></li>
+        </ul></li>
+        <li><a href="#keystone-2019-day-2-2019-01-15">Keystone 2019 Day 2: 2019-01-15</a><ul>
+        <li><a href="#am---lucas-pelkmans---university-of-zurich">8:00am - Lucas Pelkmans - University of Zurich</a></li>
+        <li><a href="#am---ellen-rothenberg---caltech">8:30am - Ellen Rothenberg - CalTech</a></li>
+        <li><a href="#am---caroline-uhler---mit">9:30am - Caroline Uhler - MIT</a></li>
+        <li><a href="#am---tim-schroeder---eth-zurich">10:00am - Tim Schroeder - ETH Zurich</a></li>
+        <li><a href="#am1200pm---morning-short-talks-1">10:45am–12:00pm - Morning short talks</a></li>
+        <li><a href="#pm---cristina-lo-celso---imperial-college-london">5:00pm - Cristina Lo Celso - Imperial College London</a></li>
+        <li><a href="#pm---prisca-liberali---fmi-basel">5:30pm - Prisca Liberali - FMI, Basel</a></li>
+        <li><a href="#pm---sinem-saka---harvard">6:00pm - Sinem Saka - Harvard</a></li>
+        <li><a href="#pm---leo-kunz---eth-zurich">7:00pm - Leo Kunz - ETH Zurich</a></li>
+        <li><a href="#day-2-reflection">Day 2 reflection</a></li>
+        </ul></li>
+        <li><a href="#keystone-2019-day-3-2019-01-16">Keystone 2019 Day 3: 2019-01-16</a><ul>
+        <li><a href="#am---stephen-quake---stanford-and-czi-biohub">8:00am - Stephen Quake - Stanford and CZI Biohub</a></li>
+        <li><a href="#am---bart-deplancke---swiss-federal-institute-of-technology">8:30am - Bart Deplancke - Swiss Federal Institute of Technology</a></li>
+        <li><a href="#am---georg-seelig---uwash">9:30am - Georg Seelig - UWash</a></li>
+        <li><a href="#am---alex-k-shalek---mitbroad">10:00am - Alex K Shalek - MIT/Broad</a></li>
+        <li><a href="#am1115am---morning-short-talks">10:30am–11:15am - Morning short talks</a></li>
+        <li><a href="#garry-nolan-couldnt-make-his-talk.">Garry Nolan couldn’t make his talk.</a></li>
+        <li><a href="#pm---xiaowei-zhuang---harvard">5:00pm - Xiaowei Zhuang - Harvard</a></li>
+        <li><a href="#pm---rick-horwitz---allen-institute-for-cell-science">5:30pm - Rick Horwitz - Allen Institute for Cell Science</a></li>
+        <li><a href="#pm---remco-loos---celgene-institute-for-translational-research-europe">6:15pm - Remco Loos - Celgene Institute for Translational Research Europe</a></li>
+        <li><a href="#pm---fan-zhang---harvard-med">6:40pm - Fan Zhang - Harvard Med</a></li>
+        <li><a href="#day-3-reflection">Day 3 reflection</a></li>
+        </ul></li>
+        <li><a href="#keystone-2019-day-4-2019-01-17">Keystone 2019 Day 4: 2019-01-17</a><ul>
+        <li><a href="#am---thomas-hofer---deutsches-krebsforschungszentrum-germany">8:00am - Thomas Hofer - Deutsches Krebsforschungszentrum, Germany</a></li>
+        <li><a href="#am---barbara-wold---california-institute-of-technology-usa">8:45am - Barbara Wold - California Institute of Technology, USA</a></li>
+        <li><a href="#am---wolf-reik---babraham-institute-uk">9:40am - Wolf Reik - Babraham Institute, UK</a></li>
+        <li><a href="#am---fernando-d.-camargo---boston-childrens-hospital-usa">10:15am - Fernando D. Camargo - Boston Children’s Hospital, USA</a></li>
+        <li><a href="#am1145am---morning-short-talks">10:50am–11:45am - Morning short talks</a></li>
+        <li><a href="#pm---keyue-ma---ut-austin">2:30pm - Keyue Ma - UT Austin</a></li>
+        <li><a href="#pm---chris-mcginnis---ucsf">3:00pm - Chris McGinnis - UCSF</a></li>
+        <li><a href="#pm---arnav-moudgil---washu">3:30pm - Arnav Moudgil - WashU</a></li>
+        <li><a href="#pm---manu-singh---garvan-institute-of-medical-research-australia">3:45pm - Manu Singh - Garvan Institute of Medical Research, Australia</a></li>
+        <li><a href="#pm---chengzhe-tian---university-of-colorado-boulder-usa">4:00pm - Chengzhe Tian - University of Colorado Boulder, USA</a></li>
+        <li><a href="#pm---david-m.-suter---école-polytechnique-fédérale-de-lausanne-switzerland">4:15pm - David M. Suter - École Polytechnique Fédérale de Lausanne, Switzerland</a></li>
+        <li><a href="#pm---emily-b.-fabyanic---university-of-pennsylvania-usa">4:30pm - Emily B. Fabyanic - University of Pennsylvania, USA</a></li>
+        <li><a href="#pm---hongkui-zeng---allen-institute-for-brain-science">5:00pm - Hongkui Zeng - Allen Institute for Brain Science</a></li>
+        <li><a href="#pm---barbara-treutlein---max-planck-institute-germany">5:45pm - Barbara Treutlein - Max Planck Institute, Germany</a></li>
+        <li><a href="#farimah-mapar-mit">6:20 - Farimah Mapar, MIT</a></li>
+        <li><a href="#day-4-reflection">Day 4 reflection</a></li>
+        </ul></li>
+        </ul>
+        </div>
+      </div>
+            <div class="span9">
+            <h1 id="keystone-2019-day-1-2019-01-14">Keystone 2019 Day 1: 2019-01-14</h1>
+<h2 id="am---keynote-speaker---scott-fraser---usc">8:00am - Keynote speaker - Scott Fraser - USC</h2>
+<p>Multimodal multiplex biomedical imaging</p>
+<p>Problem: single cell analyses necessitate that cellular dynamics are lost and normal context is violated. Results in more heterogeneity than is likely there in vivo.</p>
+<p>Solution: studdy embodied systems, embrace dynamics, variance.</p>
+<p>Tried combining HCR (hybridization chain reaction) with IMC, but HCR signal was lost. Instead, constructed MUSE (multimodal universal signal enhancement) where hairpins contain multiple offshoots where you can add dyes, heavy metals, etc. This allows multiple signals without destruction, meaning the scan rate of the microscope is 10,000x faster than IMC. 5 gigavoxels takes ~10 hours, and this is the low end. Additionally, number of colors is limited.</p>
+<p>Tried: Light sheet microscopy (2 photon SPIM). Very low phototoxicity. Great signal to noise ratio. 100x faster than MUSE. Tunable excitation depths. Can use multiple channels if you know what the base spectra are via fourier space unmixing. However, the problem is that timesteps between multiple channel capture loses dynamic information; synchronicity is lost between 3D channels.</p>
+<p>Tried light field microscopy to overcome the synchronicity problem. Selective volume imaging + LF microscropy (LF-SVIM). ASOSVIM.</p>
+<p>Have to use at least 2 channels for nucleus and cell boundary detection. Cell segmentation is still a big problem for this technology.</p>
+<p>Lattice Light sheet at Genelia? Lower field of view but excellent performance.</p>
+<h2 id="am---fabian-theis---munich">9:00am - Fabian Theis - Munich</h2>
+<p>Modeling differentiation and stimulation response in single cell genmoics</p>
+<p>Showing PAGA data that’s all available on github. Showing scvelo data. Arguing that rna-velocity is deterministic steady state whereas scvelo is a stochastic model. Uses scvelo to change PAGA connectivities to directed graph structure.</p>
+<p>Autoencoders to learn lower dimensional representation of count matrices and to denoise data. Stressing that finding the correct latent space is of utmost importance. <a href="https://github.com/theislab/scGen" class="uri">https://github.com/theislab/scGen</a></p>
+<p>scGen can be used to correct batch effects as well. Purportedly better than bbknn. But what about performance?</p>
+<p>How does he handle orthologs (homologs?) across species?</p>
+<h2 id="am---rahul-satija---nygc">10:00am - Rahul Satija - NYGC</h2>
+<p>Comprehensive single cell integration</p>
+<p>STARmap - transcriptomics in situ (Garry Nolan’s lab).</p>
+<p>Leveraging aspects of CCA and mutual nearest neighbor matching for batch correction.</p>
+<p>Determining technical vs biological is difficult and even harder is a natural biological effects vs sample preparation biological effects.</p>
+<p>Imputing CITEseq data in datasets that are scRNA-seq only by CCAing in other datasets that have corresponding CITEseq data. Planning to use HCA as reference datasets to map extra modalities into.</p>
+<p>Finding nearest neighbors between scATACseq and scRNAseq - Assumes correspondence between gene and modules of chromatin accessibility. Essentially, that one ATACseq peak isn’t indicative of transcription, but multiple peaks within a gene module implies transcription.</p>
+<p>Integrating sequencing and imaging data using STARmap. STARmap has limited gene capture (~1000 genes). Use scRNAseq to impute full gene expression in STARmap data.</p>
+<p>Can try to do the opposite: impute spatial location of scRNAseq clusters using STARmap datasets.</p>
+<p>Guy admits that previous versions of multiCCA sucked. Claims previous version is better.</p>
+<h2 id="am---dana-peer---sloan-kettering-institute">10:30am - Dana Pe’er - Sloan Kettering Institute</h2>
+<p>Mapping the emergence of organ identities in time and space</p>
+<p>Cell states are points on phenotypic manifolds Cell fates should also live on that manifold</p>
+<p>Discussing Palantir. Treating cell fate as a probability. Trying to separate out uncertainty due to true stochasticity or missing data. - Strong assumption: cells can’t go back in time and differentiation is a markov process. - Entropy of cell fate probability is a measure of a cell’s “differentiability” or “differential potential”. <a href="https://github.com/dpeerlab/Palantir" class="uri">https://github.com/dpeerlab/Palantir</a></p>
+<p>Manifold alignment techniques assume you’re looking at the same thing/timepoints. Use a MNN correction to align different timepoints that integrates between sample correlations and within sample correlations. <a href="https://github.com/dpeerlab/Harmony" class="uri">https://github.com/dpeerlab/Harmony</a></p>
+<p><strong>Interesting point</strong>: real trajectories are usually made up of small steps (pseudotime or transcription changes) whereas trajectories with large/variable step sizes are likely not real. How does this affect development of chemosensing astrocytes in Colin’s data?</p>
+<p>AP pseudo-space?</p>
+<h2 id="am1200pm---morning-short-talks">11:15am–12:00pm - Morning short talks</h2>
+<h3 id="am---chuangqi-wang---worchester-polytechnic-institute-phd-student">11:15am - Chuangqi Wang - Worchester Polytechnic Institute (Phd student)</h3>
+<p>Studying heterogeneity in cell protusion.</p>
+<h3 id="am---hanchuan-peng---allen-institute-for-brain-science">11:30am - Hanchuan Peng - Allen Institute for Brain Science</h3>
+<p>3D neuron imaging at singlecell level.</p>
+<p>Vaa3D image software</p>
+<h2 id="pm400pm---afternoon-rapid-fire-talks">1:30pm–4:00pm - Afternoon rapid fire talks</h2>
+<h3 id="robin-browaeys---nichenet---belgium">Robin Browaeys - NicheNet - Belgium</h3>
+<p>Inference of intercellular communication</p>
+<p>Input: expression data. Method: uses 20 open databased on gene regulatory networks, ligand/receptor interactions, Uses network propagation methods (like what? belief propagation?) Output: predicts genes effected by ligand/receptor expression.</p>
+<p>Case study: tumor microenvironment. Which CAFs regulate the expression of p-EMT in malignant cells?</p>
+<p>Poster 1028.</p>
+<h3 id="andrew-butler---comprehensive-integration-of-sc-data---nygc">Andrew Butler - Comprehensive integration of sc data - NYGC</h3>
+<p>Goals: create larger reference datasets and identify common cell types across datasets.</p>
+<p>Problem: transferring cell type annotations from one type from another. Placing new data onto a reference.</p>
+<p>Poster 1030</p>
+<h3 id="george-c-linderman---zero-preserving-imputation---yale">George C Linderman - Zero-preserving imputation - Yale</h3>
+<p>Trying to disentangle technical vs biological zeros in expression matrices.</p>
+<p>ALRA method. Rank k-svd approximation + adaptative thresholding</p>
+<p>Assumption for thresholding: Values corresponding to biological zeros are symmetric around zero. So if you threshold at the abs value of the largest negative value, this is should correspond to the largest incorrectly imputed biological zero. Everything else should be technical zeros.</p>
+<p>Poster 2056.</p>
+<h3 id="ilya-korsunsky---batch-effect-correction-with-harmony---harvard">Ilya Korsunsky - Batch effect correction with Harmony - Harvard</h3>
+<p><a href="https://www.biorxiv.org/content/early/2018/11/05/461954">preprint</a></p>
+<p>Linear mixture models to account for batch effects. Iterative method that first estimates shared cell types, then uses linear regression to regress out batches.</p>
+<p>Poster 2039</p>
+<h3 id="gan-yu---integrating-differential-expression-and-gene-set-analysis---umich">Gan Yu - Integrating differential expression and gene set analysis - UMich</h3>
+<p>Method name: iDEA</p>
+<p>Thinks current methodology which feeds DE genes into GSEA isn’t correct as both methods are related. Instead, proposes iterative analysis. Seems to provide marginal improvement over existing methods in finding DEs and enriched gene sets.</p>
+<p>Poster 4061</p>
+<h3 id="gregoire-altan-bonnet---hierarchical-agglomaterative-clustering-in-cytof--nci">Gregoire Altan-Bonnet - hierarchical agglomaterative clustering in CyTOF- NCI</h3>
+<p>Method name: HAL-x or ALPS</p>
+<p>Poster 1008</p>
+<h3 id="shiyi-yang---removing-contamination-from-ambient-rna-in-scrna-seq---boston-university">Shiyi Yang - Removing contamination from ambient RNA in scRNA-seq - Boston University</h3>
+<p>Bayesnian mixture model</p>
+<p><a href="https://github.com/compbiomed/celda/blob/master/R/decon.R">github</a></p>
+<p>Assumptions: each cell contains two distributions of counts: 1 for true expression and another for counts by contaminations.</p>
+<p>Method name: DecontX</p>
+<p>Poster 4054</p>
+<h3 id="gregory-schwartz---too-many-cells---u-penn">Gregory Schwartz - Too Many Cells - U Penn</h3>
+<p><a href="https://github.com/GregorySchwartz/too-many-cells">github</a></p>
+<p>Hierarchical clustering algorithm and associated visualization tools.</p>
+<p>Poster 3057</p>
+<h3 id="rongxin-fang---single-cell-regulomes---ucsdsalk">Rongxin Fang - Single cell regulomes - UCSD/Salk</h3>
+<p><a href="https://github.com/r3fang/snATAC">github</a></p>
+<p>SNAPATAC - comprehensive solution for analysis of scATAC-seq</p>
+<p>Poster 1056</p>
+<h3 id="junil-kim---reconstruction-of-gene-regulatory-network-from-pseudotime---u-copenhagen">Junil Kim - Reconstruction of gene regulatory network from pseudotime - U Copenhagen</h3>
+<p>New algorithm for large scale causal network reconstruction.</p>
+<p>Poster 2033</p>
+<h3 id="corey-williams---trajectory-mapping-using-flow-map---uva">Corey Williams - Trajectory mapping using FLOW-MAP - UVA</h3>
+<p><a href="https://github.com/zunderlab/FLOWMAP">github</a></p>
+<p>Understand molecular processes that determine cell state and cell fate.</p>
+<p>Use time course data to constrain trajectory graph construction. Prohibit knn connections between non-adjacent timepoints.</p>
+<p>Poster 4043</p>
+<h3 id="robrecht-cannoodt---dynbenchmark-benchmark-of-pseudotime-methos---ghent-university-belgium">Robrecht Cannoodt - Dynbenchmark: benchmark of pseudotime methos - Ghent University, Belgium</h3>
+<p><a href="https://github.com/dynverse/dynbenchmark">github</a></p>
+<p>Poster 1033</p>
+<h3 id="wouter-saelens---dyno-inferring-and-intepreting-trajectories---ghent-university-belgium">Wouter Saelens - Dyno: Inferring and intepreting trajectories - Ghent University, Belgium</h3>
+<p><a href="https://github.com/dynverse/dyno">github</a></p>
+<p>Poster 3053</p>
+<h2 id="pm430pm---panel-discussion">4:00pm–4:30pm - Panel discussion</h2>
+<p>Biggest challenges: - Alon Klein - Integration of reference datasets into future analyses. - Dana Pe’er - Mechanistic models utilizing time and spatial information and batch effects - Fabian Theis - Generative models and annotations. - Rahul Satija - Inference of various sorts, and quantifying uncertainty in methods development.</p>
+<p>There aren’t platforms for sharing and making accessible yet, but HCA hopefully fill this need.</p>
+<p>Dana thinks that methods are so context specific that finding the “best” method might be an ill-posed problem. Instead, people need to validate that using a method on their data is a robust result.</p>
+<p>Fabian thinks that it is critical we make our code/figures/validation as accessible as possible.</p>
+<p>Alon thinks that it’s important to identify metrics that identify if your method works well. And possibly to show/describe when/how your method breaks and is limited.</p>
+<h2 id="day-1-reflection">Day 1 reflection</h2>
+<h3 id="personal-chats">Personal chats</h3>
+<p>MD/PhD students Andrew and Joel from Mount Sinai. Guy from MARS-seq implementing maximum likelihood method to embed cells into k-means clustering generated using a subset of a dataset.</p>
+<p>Lior Patcher lab doing non-antibody tags. Jase Gehring <a href="https://www.biorxiv.org/content/early/2018/05/05/315333">preprint</a></p>
+<h3 id="other-thoughts">Other thoughts</h3>
+<p>Can we do leave one out cross validation of bbknn data.</p>
+<p>Can I talk to 10X people about missing mTomato/mCherry transcripts.</p>
+<h1 id="keystone-2019-day-2-2019-01-15">Keystone 2019 Day 2: 2019-01-15</h1>
+<h2 id="am---lucas-pelkmans---university-of-zurich">8:00am - Lucas Pelkmans - University of Zurich</h2>
+<p>Understanding emergent phenomena across biological scales</p>
+<p>Across scales, studying similar phenomena: emergent self-organizing properties.</p>
+<p>Tracking mRNA transcripts across thousands of cells on the scale of millions of sub-cellular objects.</p>
+<p>He’s concerned with preventing photoactivated crosslinking of antibodies so that you can effectively elute your antibodies without destroying your sample. Crosslinking occurs because you flurophore emission sometimes releases singlet oxygens which activate crosslinking reactions. His solution is to add a soluble O- acceptor that prevents crosslinking. This allows repeated staining and elution without loss of signal.</p>
+<p>Method name: 4i</p>
+<p>Each pixel in their 4i data contains 40 intensity measurements of different probes. They uses these vectors to cluster each pixels into units and then maps these units back into the spatial representation of the cell. This effective coarse graining allows you to understand proximity of units to others, classify entire cells by their makeup of units, etc.</p>
+<p>Perhaps you don’t even need segmentation to see patterns. This has implications for Santhoshes data.</p>
+<h2 id="am---ellen-rothenberg---caltech">8:30am - Ellen Rothenberg - CalTech</h2>
+<p>Making Tcells from multipotent progenitors and understand commitment decisions in differentiation fates.</p>
+<p>They have a single gene, Bc11b, that is tightly correlated with T cell commitment that is part of a feed-forward gene regulatory network.</p>
+<h2 id="am---caroline-uhler---mit">9:30am - Caroline Uhler - MIT</h2>
+<p>Mathematical and computational tools to study high throughput measurements of single cells.</p>
+<p>Causal inference and gene regulatory networks. Sets of nonlinear equations to describe a causal graph modeling a regulatory network.</p>
+<h2 id="am---tim-schroeder---eth-zurich">10:00am - Tim Schroeder - ETH Zurich</h2>
+<p>Be cautious in interpreting dynamics from snapshot data.</p>
+<p><a href="https://www.bsse.ethz.ch/csd/software/ttt-and-qtfy.html">The (Timm’s) Tracking Tool</a></p>
+<h2 id="am1200pm---morning-short-talks-1">10:45am–12:00pm - Morning short talks</h2>
+<p>###Rene Maehr - UMass Medical School</p>
+<p>Poster 3003</p>
+<p>Human embryo thymus development using scATAC- and scRNA-seq.</p>
+<h3 id="min-xue---uc-riverside">Min Xue - UC Riverside</h3>
+<p>Poster 4???</p>
+<p>Building FRET-based reporting system based on structural biology to understanding cell-to-cell signaling.</p>
+<h3 id="masahiro-ueda---riken">Masahiro Ueda - RIKEN</h3>
+<p>Automated live single-cell imaging analysis of intracellular signal transduction with single-molecule sensitivity</p>
+<p>Uses Dicty as a model system.</p>
+<p>PTEN and PIP3 are expressed in a mutually exclusive manner on the membrane. This forms a somewhat molecular compass.</p>
+<h2 id="pm---cristina-lo-celso---imperial-college-london">5:00pm - Cristina Lo Celso - Imperial College London</h2>
+<p>Healthy and malignant haematopoiesis in the bone marrow: dynamic cells in an evolving environment</p>
+<p>Studying stress in HSCs using confocal and 2-photon microscopy. Specifically - how HCSs competes with Leukaemia,</p>
+<pre><code>T-ALL and AML (their models for Leukaemia) cells are mobile (moreso after
+chemotherapy) and highly express CXCR4. Inhibiting CXCR4 mobilizes these
+Leukaemia cells in the bone marrow.  However, these two models have different
+interactions with the bone marrow microenvironment and CXCR4.</code></pre>
+<ul>
+<li><p>how HCSs and the bone marrow microenvironment changes during infection Malaria infection. Ran 10X on infected and control mice. Not really doing a controlled analysis of case vs. control. Seems to making conclusions from relative cell numbers in datasets that haven’t been aggregated and clustered together.</p></li>
+<li><p>how HCSs behave early after engraftment.</p></li>
+</ul>
+<h2 id="pm---prisca-liberali---fmi-basel">5:30pm - Prisca Liberali - FMI, Basel</h2>
+<p>Self-organization in intestinal organoid development</p>
+<p>“Self-organization, symmetry breaking, and collective behavior” - molecular and cellular mechanisms that drive emergent behavior in cell populations.</p>
+<p>Calls changes in population’s macroscropic properties “symmetry breaking”. What is the reaction coordinate and critical point? How to define?</p>
+<p>Using 4i to image organoids. Segment with CNNs at nuclei, cell, and organoid level.</p>
+<p>Symmetry breaking isn’t universal in organoids. Some never phase change. Organoid fate appears to be time sensitive; if organoid doesn’t generate stem (planet) cell by some time threshold, it never will. Using light sheet microscopy imaging the developing organoid from 1 cell for a week, they can use dynamic time warping to align pseudotime and real time. This time threshold seems to be around 48 hours.</p>
+<p>They identified a gene, Yap1, which is needed for intesinal regeneration that is expressed variably during organoid development. Both knocking it out and making its expression isotropic inhibit symmetry breaking. Suggests variable expression of this gene is required for symmetry breaking.</p>
+<p>They hit ~500,000 organoids with a Novartis drug library (2+ compounds per condition), imaged with on-the-fly organoid identification and segmentation, and clustered organoid morphology to define a landscape of development organoid phenotypes. This can be used to generate a drug-gene-phenotype mapping.</p>
+<h2 id="pm---sinem-saka---harvard">6:00pm - Sinem Saka - Harvard</h2>
+<p>Highly multiplexed in situ protein imaging with signal amplification</p>
+<p><a href="https://www.biorxiv.org/content/early/2018/12/28/507566">preprint</a></p>
+<p>Signal amplification by exchange reaction (SABER) Uses primer exchange reaction which generations long concatemers with many binding sites for imaging probes.</p>
+<p>You stain with tagged antibodies all at once, then apply SABER, which multiplexes the anitobody tags in one go. Through branching, they can get large dynamic range of signal detection.</p>
+<p>Can also apply this for - RNA/DNA detection where FISH probes are ligated to SABER concatemers. - expansion microscopy.</p>
+<p>Poster 3054</p>
+<h2 id="pm---leo-kunz---eth-zurich">7:00pm - Leo Kunz - ETH Zurich</h2>
+<p>Visualization and quantification of cytokines at the single molecule level in situ</p>
+<p>Poster 2045</p>
+<h2 id="day-2-reflection">Day 2 reflection</h2>
+<h3 id="personal-chats-1">Personal Chats</h3>
+<p>A grad student at Mount Sinai suggested that capturing neutrophils with scRNA-seq is challenging because as soon as they are lysed, they spill all their mRNA? Shouldn’t that still be captured by the GEM? He claims they will always have very few counts, often below filtering thresholds.</p>
+<p>Need to use veloctyo on Colin’s data to see if there is actual flow between immature astrocytes to chemosensing vs mature astrocytes. Show pseudotime coloring as <code>cmo.phase</code>.</p>
+<p>Create perceptually uniform monochromatic colormaps starting at light gray and ending at red/blue/green. Essentially gray to black through a color.</p>
+<p>I wonder if Jeremy’s interest in the topological spaces of phylogenetic trees could be useful in understand lineage tracing/pseudotime. Given a tree, a knockout or other alteration to the system can be viewed as an operator to move you from one area in the topology to another (a different tree). What types of transformations have the largest “distance” or smallest “distance”? Is there a similar topological space that spans cyclic graphs (could be used to study regulatory networks)? What about using this to understand relationships between different trees learned from different patients/replicates?</p>
+<p>Discussed with 10X about: 1. No tdTomato reads. They took my contact info and will discuss with customer and technical support. 2. Why did they switch to 91bp for read 2 in v3? They didn’t know. They likely think that the 100bp kits have more than 25bp leeway.</p>
+<h1 id="keystone-2019-day-3-2019-01-16">Keystone 2019 Day 3: 2019-01-16</h1>
+<h2 id="am---stephen-quake---stanford-and-czi-biohub">8:00am - Stephen Quake - Stanford and CZI Biohub</h2>
+<p>Single Cell Genomics - A tool for drug discovery</p>
+<p>Characterizing IgE producing B cells in PMBCs of allergic individuals IgE is one of the rarest antibody isotypes, usually the culprit for allergies. Primary purpose is for antihelmeth activity.</p>
+<p>Enriching this rare population with antibody sorts/FACS is challenging. Did scRAN-seq + VDJ analysis. From the VDJ analysis, they construct the antigen receptors. - IgE B cells are predominantly plasmablasts (PBs). - IgE antibody diversity mimics other class switched isotypes. - Isolated 6 antibodies from their data, and found that they are highly mutated, and tested their binding affinity to peanut antigens. They bound very highly and were cross reactive for multiple peanut antigens. Appears the mutated light chain is needed for this high binding affinity. - They can further design antibodies starting from these naturally found antibodies that have picomolar cross-reactive binding affinity to these peanut allergies</p>
+<p>The Tabula Muris</p>
+<h2 id="am---bart-deplancke---swiss-federal-institute-of-technology">8:30am - Bart Deplancke - Swiss Federal Institute of Technology</h2>
+<p>Low-input single- and intra-cell RNA sequencing technologies</p>
+<p>asap.epfl.ch</p>
+<p>Developing low input sequencing tech so that he can study single samples (not pooled data) and support clinical samples that have low cell counts.</p>
+<p>Drop-seq and InDrop require a base minimum of 10k and 2k input cells. Drop-seq has 90% cell loss, 10X has 50%, and InDrop has 25%.</p>
+<p>Developed DeterminIStic CO-encapsulation (DisCo). Designed to remove the single/double Poisson processes involved in cell-bead capture. Uses machine vision to have cells/beads line up at gates which only open when both are present. Co-encapsulation efficiency is ~80%. However, it’s slow: 400-500 cells/hr. Bead processing also leads to substantial loss of beads; you lose &lt;60% of beads during washing. Had to reinvent a new bead recovery mechanism which reduces bead loss to only 10%. Also allows for highly diluted samples.</p>
+<p>Due to machine vision, they can do size/shape sorts on the chip. In the future, this could be used to detect certain types of fluorescence, etc.</p>
+<p>Dream is to link high-resolution image of the cell to the transcriptome (via image recognition of the bead).</p>
+<p>Live-seq: scRNA-seq while keeping cells alive Using a force-microscopy head, you can carefully puncture individual cells, apply counter pressure and suck up small amounts of fluid/molecules from inside the cell. With 0.1 - 3.2 pL capture, 82% of cells remain viable.</p>
+<p>Using a modified Smart-Seq2, they can sequence sub-picoliter volumes of mRNA. So far only able to capture ~1000 genes per cell, and only ~14 cells.</p>
+<h2 id="am---georg-seelig---uwash">9:30am - Georg Seelig - UWash</h2>
+<p>Split-Pool barcoding</p>
+<p>Split-seq ~11 million barcodes. Validates with 1800 cells. With only 4000 cells, you get 50% chance of collisions. They say 1% doublet rate, meaning 10k doublets.</p>
+<p>Split-seq does better than 10X for nuclei but slightly worse for cells. Both are worse than smart-seq2. However, all technologies capture sufficient information to identify cell types (of GABAergic neurons at least). Comparison was done at Allen Brain Institute.</p>
+<p>Sample multiplexing is natural with split-seq, as first found is with RT primer, which can be used as a sample identifier. So put each sample into a different well to start.</p>
+<p>Technology also lets you fix samples then freeze, and then sequence later, so sample prep seems much more relaxed.</p>
+<p>This is being commercialized: www.splitbiosciences.com</p>
+<p>Poster 3047: pairing split-seq with TCR/BCR profiling. Does not rely on PCR or pull-down with biotinalated beads.</p>
+<h2 id="am---alex-k-shalek---mitbroad">10:00am - Alex K Shalek - MIT/Broad</h2>
+<p>Identifying and rationaly modulating cellular drivers of enhanced immunity</p>
+<p>Studying when your immune system works and how vaccines/protective measures help when your immune system doesn’t work.</p>
+<p>Looking at granulomas from mTB infection (Travis Hughes, MD/PhD student). Very hard to get healthy controls and finding granulomas is difficult. Collaborating with Joanne Flynn at Pitt for Macaque model of mTB.</p>
+<p>Using Seq-Well protocol to study these data. Collected 40 granulomas from 6 animals, and there is substantial variability in bacterial burden among granulomas from the same animal. They can then correlate cell type numbers with bacterial burden. Macrophages, plasma cells, and mast cells are associated with higher bacterial burden. Finds Th17 cells in addition to T-effector cells that are associated with bacterial control.</p>
+<p>The TB vaccine isn’t 100% effecitve. He wants to know why. Turns out the vaccine is administered in different ways and animal models suggest that IV innoculation is the most effective. Compares scRNA-seq where the conidition is the vaccine route.</p>
+<p>Shalek lab, multi-species, multi-dataset database that is queriable. To be public “soon”.</p>
+<h2 id="am1115am---morning-short-talks">10:30am–11:15am - Morning short talks</h2>
+<h3 id="am---gary-hon---ut-southwestern-medical-school">10:30am - Gary Hon - UT Southwestern Medical School</h3>
+<p>Reprogramming via TFs.</p>
+<p>Reprogram-seq: mouse embryonic fibroblasts, hit them with a TF retroviral library and sequence them.</p>
+<h3 id="am---bre-dandreth---mit">10:45am - Bre D’Andreth - MIT</h3>
+<p>One-pot transfection method for rapid characterization and optimization of genetic systems.</p>
+<h3 id="am---luca-rappez---embl">11:00am - Luca Rappez - EMBL</h3>
+<p>SpaceM, Spatial single-cell profiling of intracellular metabolomes in situ</p>
+<p>Poster 3041</p>
+<p><a href="https://www.biorxiv.org/content/early/2019/01/02/510222">preprint</a></p>
+<h2 id="garry-nolan-couldnt-make-his-talk.">Garry Nolan couldn’t make his talk.</h2>
+<h2 id="pm---xiaowei-zhuang---harvard">5:00pm - Xiaowei Zhuang - Harvard</h2>
+<p>Single-cell transcriptome and chromosome imaging</p>
+<p>Ad for MERFISH <a href="http://zhuang.harvard.edu/merfish.html">protocols</a> - sequential imaging with combinatorial labeling - yields binary expression matrix with 2^N rows and N columns - uses FISH to add probes in a error-correcting manner through a seperate readout - detection efficiency is &gt;90%.</p>
+<p>Spatial and functional atlas of mouse hypothalamus preoptic region using MERFISH and 10X - 9 major cell classes, &gt;60 neuronal cell populations from 10X - yields marker genes for MERFISH imaging - imaged 155 genes with MERFISH, 85 from previous knowledge, 70 from 10X - were able to image 1.8mm x 1.8mm x 0.6mm per animal across multiple mice yielding 1.1 cells imaged. - strong correlation between MERFISH and scRNA-seq</p>
+<p>Exposed virgin/parent male/female combination mice to parental conditions - use cFos as an early marker for activation. - looking for genes that are co-expressed with cFos in 70+ neuronal cell types - identified essentially a single “parenting cluster” that’s activated across all combinations except virgin males, who show aggression instead. Parent males show aggression but it is outweighed (either by being downstream or directly inhibited) by parenting cluster.</p>
+<p>Tracing 3D conformation of chromatin - multiplexed FISH identifies genomic loci and links them together (how? through ordering of specific FISH probes?) - Can get down to 30kb resolution. - Validate with HI-C data, but since it’s single cell data, they can look at single cell contact maps.</p>
+<h2 id="pm---rick-horwitz---allen-institute-for-cell-science">5:30pm - Rick Horwitz - Allen Institute for Cell Science</h2>
+<p>Conjoining single cell imaging, genomics, and computaion to create a stem cell state space</p>
+<p>3 principles of Allen Institute for Cell Science - High dimensional cell atlas - Principles of cell organization - Gene regulatory circuits and morphogenesis</p>
+<p>Top down approach -&gt; combining genomics, organelles, phenotypes across scales. They do it all in stem cells. “Dynamic, data-driven virtual cell”</p>
+<p>Cell Collection: FP-tagged hiPCS lines Imaging uses automated high replicate microscropy with 4 channels - membrane - gene edited structure - nucleus - bright field</p>
+<p>Segementation: Allen Cell structure segmenter <a href="https://github.com/AllenInstitute/aics-segmentation">github</a> - works across a variety cell morphologies - has iterative ML process</p>
+<p>Analyses of cell variation: ANOCVA - all data is available - including the segmented images</p>
+<p>UNet trained model to identify moitosis structure in bright-field. Using this, don’t need fluorecence and can produce dynamic, 3-D images of multiple cells containing multiple subcellular structures.</p>
+<p>Trained a model to generate a continuous landscape of cellular and sub-cellular morphologies.</p>
+<p>Next steps involve integrating cell states from cellular neighborhoods, integrating transcriptomics -&gt; FISH -&gt; imaging.</p>
+<h2 id="pm---remco-loos---celgene-institute-for-translational-research-europe">6:15pm - Remco Loos - Celgene Institute for Translational Research Europe</h2>
+<p>Understanding heterogeneity in AML through bulk and single-cell gene expression profiling</p>
+<p>intra-patient profiling: scRNA-seq inter-patient profiling: bulk RNA-seq</p>
+<h2 id="pm---fan-zhang---harvard-med">6:40pm - Fan Zhang - Harvard Med</h2>
+<p>Defining inflammatory cell states in rhumatoid arthritis</p>
+<p><a href="https://www.biorxiv.org/content/early/2018/06/20/351130">preprint</a></p>
+<h2 id="day-3-reflection">Day 3 reflection</h2>
+<h3 id="personal-chats-2">Personal Chats</h3>
+<p>Why don’t we always align to pre-mRNA references? Aren’t nuclear mRNAs present in the lysed cell?</p>
+<p>Harmony guy is open to someone implementing in python, either by reimplementation or by just writing a frontend to the C++ backend.</p>
+<p>Ttyh2 Mature Oligodendro marker Pdgfra Immature Oligodendro marker</p>
+<h1 id="keystone-2019-day-4-2019-01-17">Keystone 2019 Day 4: 2019-01-17</h1>
+<h2 id="am---thomas-hofer---deutsches-krebsforschungszentrum-germany">8:00am - Thomas Hofer - Deutsches Krebsforschungszentrum, Germany</h2>
+<p>Modeling Population Dynamics of Lineage Pathways through Barcoding Analysis</p>
+<p>Using population models to study fate mapping in differentiation n = exp(f(proliferation, differentiation, migration, death) * t)</p>
+<p>Number of HSCs in development is controversial topic. To find out, they used noninvasive genetic barcoding in HSCs using inducible Cre-polylox system.</p>
+<p>Prob(barcode generation probability) matches what they see.</p>
+<p>HSCs appear to come from a small number of precursors and proliferate greatly.</p>
+<h2 id="am---barbara-wold---california-institute-of-technology-usa">8:45am - Barbara Wold - California Institute of Technology, USA</h2>
+<p>Following Cellular Reprogramming at the Single Cell Level</p>
+<p>scRNA-seq of forelimb development.</p>
+<h2 id="am---wolf-reik---babraham-institute-uk">9:40am - Wolf Reik - Babraham Institute, UK</h2>
+<p>Single Cell Epigenome Landscape of Development and Aging</p>
+<p>Epigenetics confers memory</p>
+<p>scNMT-seq - both transcriptome, chromatin accessibility, and methylome</p>
+<p>Can they resolve the timing of epigenetic and transcriptomic events</p>
+<p>MOFA - multiomic factor analysis</p>
+<p><a href="https://www.biorxiv.org/content/early/2019/01/13/519207">preprint</a></p>
+<h2 id="am---fernando-d.-camargo---boston-childrens-hospital-usa">10:15am - Fernando D. Camargo - Boston Children’s Hospital, USA</h2>
+<p>Cellular Barcoding in Mammalian Systems</p>
+<p>Use transposons to tag cells. All cells have the same donor locus of the transposon, but when doxycyclin is added, it reinserts somewhere completely random. They consider the adjacent DNA to the reinserted transponon to be the tag.</p>
+<p>HSCs are primarily megakaryocyte progenitors whereas MPPs, not, HSCs are pregenetiors of most other lineages.</p>
+<h2 id="am1145am---morning-short-talks">10:50am–11:45am - Morning short talks</h2>
+<h3 id="am---aziz-alkhafaji---university-of-texas-usa">10:50am - Aziz Al’Khafaji - University of Texas, USA</h3>
+<p>Short Talk: Studying Therapeutic Resistance in Chronic Lymphocytic Leukemia using Functionalized Lineage Tracing</p>
+<p>Method name: COLBERT</p>
+<h3 id="am---bushra-raj---harvard-university-usa">11:05am - Bushra Raj - Harvard University, USA</h3>
+<p>Short Talk: Reconstruction of Brain Specification and Lineage Trees with Single-Cell Profiling and CRISPR Recorders</p>
+<p>URD - new pseudotime algo <a href="http://science.sciencemag.org/content/360/6392/eaar3131">paper</a></p>
+<p>scGESTALT - lineage tracing methodology</p>
+<h2 id="pm---keyue-ma---ut-austin">2:30pm - Keyue Ma - UT Austin</h2>
+<p>High-throughput single-cell linking of antigen specificity to TCR sequences</p>
+<p>No fast/cost-effective methods to generate tagging peptides New tech: TetTCR-seq, <a href="https://www.nature.com/articles/nbt.4282">paper</a></p>
+<h2 id="pm---chris-mcginnis---ucsf">3:00pm - Chris McGinnis - UCSF</h2>
+<p>MULTI-seq: scalable sample multiplexing for single-cell RNA sequencing <a href="https://www.biorxiv.org/content/early/2018/08/08/387241">preprint</a></p>
+<p>Wants to move sample multiplexing prior to droplet microfluidics devices (instead of at the end when the i7 indices are added).</p>
+<p>Lipid-modified-oligos (LMOs) - Scalable: modular rapid quenchable cheap - Compatible with nuclei since it’s targeting the lipid membrane - Compatible with all species/whatever</p>
+<p>So far, doesn’t work too well on fixed samples yet. Click-tags, however, work super well on fixed samples.</p>
+<p>In conjunction with doubletfinder or scrublet, you can essentially remove all doublets since cells are labeled beforehand.</p>
+<p>96 samples cost $5k to prep vs. $120k with vanilla 10X.</p>
+<p>Not too much exchange within ~6hrs in terms of lipid exchange.</p>
+<p>Can’t make reagents at scale yet, but get in contact: chris.mcginnis@ucsf.edu</p>
+<h2 id="pm---arnav-moudgil---washu">3:30pm - Arnav Moudgil - WashU</h2>
+<p>Simultaneous TF-binding assays and RNA-seq at single cell resolution</p>
+<p>Method: Calling Cards</p>
+<p>Transposons are carrying reporters and are linked to TFs. When TFs bind, the transposon inserts itself (and thus the reporter) nearby. For scRNA-seq, they need to circularize with biotin pull-down.</p>
+<p>They can make the reporter fluorescent to do this in vivo.</p>
+<h2 id="pm---manu-singh---garvan-institute-of-medical-research-australia">3:45pm - Manu Singh - Garvan Institute of Medical Research, Australia</h2>
+<p>Linking high-throughput single cell RNA_seq with long read TCR/BCR transcripts.</p>
+<p>Method: RAGE-seq <a href="https://www.biorxiv.org/content/early/2018/09/24/424945">preprint</a></p>
+<p>After 10X cDNA library generation, they do hybridization capture and Oxford nanopore sequencing in addition to short read sequencing.</p>
+<p>They do de novo assembly of nanopore reads on a per-cell basis.</p>
+<p>Validated usind Jurkat and Ramos cell lines with known antigen receptors, and they get 98% accuracy.</p>
+<h2 id="pm---chengzhe-tian---university-of-colorado-boulder-usa">4:00pm - Chengzhe Tian - University of Colorado Boulder, USA</h2>
+<p>A “Global Tracker” for Hard-to-Track Cancer Cells Reveals Substantial Heterogeneity in the Dynamics of Single-Cell Drug Responses</p>
+<p>One parameter set for segmentation across all frames.</p>
+<h2 id="pm---david-m.-suter---école-polytechnique-fédérale-de-lausanne-switzerland">4:15pm - David M. Suter - École Polytechnique Fédérale de Lausanne, Switzerland</h2>
+<p>Single Live Cell Monitoring of Protein Turnover Reveals Intercellular Variability and Cell Cycle Dependence of Degradation Rates</p>
+<p>Using tandem slow/fast maturing fluorescent proteins so that fluorescent signal changes color over time.</p>
+<p>Looking at protein synthesis and degradation rates, they can show that protein accumulation in cells after cell division is predominantly due to increases in synthesis rates and not decreases in degradation rates. The opposite is true before and during cell division.</p>
+<p>Synthesis and degradations rates within individual cells are highly correlated which allows cells to buffer variability in gene expression.</p>
+<p>Degradation rates aren’t really gene-specific</p>
+<h2 id="pm---emily-b.-fabyanic---university-of-pennsylvania-usa">4:30pm - Emily B. Fabyanic - University of Pennsylvania, USA</h2>
+<p>Probing the Mammalian Hydroxymethylome at Single-Cell Resolution Using a DNA Deaminase</p>
+<p>Method: ACE-seq Leveraging APOBEC3A which deaminases cytosine and methylctyosine with much more efficiency than hydroxy-methylcytosine, so that they can see epigentic signatures due to hmC vs mC and C, which in the neurons is the terminal methylated state of cytosine (for the most part).</p>
+<p>bACE-seq (bisulfite-assisted ACE-seq) confers protection to hmC.</p>
+<h2 id="pm---hongkui-zeng---allen-institute-for-brain-science">5:00pm - Hongkui Zeng - Allen Institute for Brain Science</h2>
+<p>Cell Type Classification in the Mouse Brain</p>
+<h2 id="pm---barbara-treutlein---max-planck-institute-germany">5:45pm - Barbara Treutlein - Max Planck Institute, Germany</h2>
+<p>Single-Cell Transcriptomics Uncovers Convergence of Cell Identities during Axolotl Limb Regeneration</p>
+<h2 id="farimah-mapar-mit">6:20 - Farimah Mapar, MIT</h2>
+<p>Short Talk: Design and Analysis of Staged Mutual Inhibition: Using Single Neuron Computation to Implement Bi-Stable Neuronal Toggle Switch</p>
+<p>This was the most incomprehensible talk I’ve ever witnessed. And she’s standing in the way of food and beer and dance party!</p>
+<h2 id="day-4-reflection">Day 4 reflection</h2>
+<h3 id="personal-chats-3">Personal Chats</h3>
+<p>Can we define doublets in the way shown in the poster of Decibel Therapeutics? How many fake doublets do we generate?</p>
+<pre><code>doubs = adata.copy()
+sizes = adata.obs.groupby(cluster_key).size()
+
+for cluster in adata.obs[cluster_key].unique():
+</code></pre>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
