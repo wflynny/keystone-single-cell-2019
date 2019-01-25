@@ -47,7 +47,7 @@ Be cautious in interpreting dynamics from snapshot data.
 
 ## 10:45am--12:00pm - Morning short talks
 
-###Rene Maehr - UMass Medical School
+### Rene Maehr - UMass Medical School
 
 Poster 3003
 
@@ -172,7 +172,7 @@ regulatory networks)? What about using this to understand relationships between
 different trees learned from different patients/replicates?
 
 Discussed with 10X about:
-1.  No tdTomato reads.  They took my contact info and will discuss with customer
+*   No tdTomato reads.  They took my contact info and will discuss with customer
     and technical support.
-2.  Why did they switch to 91bp for read 2 in v3? They didn't know.  They likely
+*   Why did they switch to 91bp for read 2 in v3? They didn't know.  They likely
     think that the 100bp kits have more than 25bp leeway.

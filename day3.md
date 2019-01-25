@@ -26,7 +26,7 @@ The Tabula Muris
 ## 8:30am - Bart Deplancke - Swiss Federal Institute of Technology
 Low-input single- and intra-cell RNA sequencing technologies
 
-asap.epfl.ch
+Interactive scRNA-seq analysis platform: https://asap.epfl.ch
 
 Developing low input sequencing tech so that he can study single samples (not
 pooled data) and support clinical samples that have low cell counts.
@@ -48,7 +48,10 @@ this could be used to detect certain types of fluorescence, etc.
 Dream is to link high-resolution image of the cell to the transcriptome (via
 image recognition of the bead).
 
+[Preprint]: https://www.biorxiv.org/content/10.1101/256594v2
+
 Live-seq: scRNA-seq while keeping cells alive
+
 Using a force-microscopy head, you can carefully puncture individual cells,
 apply counter pressure and suck up small amounts of fluid/molecules from inside
 the cell.  With 0.1 - 3.2 pL capture, 82% of cells remain viable.

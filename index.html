@@ -3228,7 +3228,7 @@ h4:hover a { color: #333; } h5:hover a { color: #333; } h6:hover a { color: #333
 <p>Be cautious in interpreting dynamics from snapshot data.</p>
 <p><a href="https://www.bsse.ethz.ch/csd/software/ttt-and-qtfy.html">The (Timm’s) Tracking Tool</a></p>
 <h2 id="am1200pm---morning-short-talks-1">10:45am–12:00pm - Morning short talks</h2>
-<p>###Rene Maehr - UMass Medical School</p>
+<h3 id="rene-maehr---umass-medical-school">Rene Maehr - UMass Medical School</h3>
 <p>Poster 3003</p>
 <p>Human embryo thymus development using scATAC- and scRNA-seq.</p>
 <h3 id="min-xue---uc-riverside">Min Xue - UC Riverside</h3>
@@ -3273,7 +3273,7 @@ interactions with the bone marrow microenvironment and CXCR4.</code></pre>
 <p>Need to use veloctyo on Colin’s data to see if there is actual flow between immature astrocytes to chemosensing vs mature astrocytes. Show pseudotime coloring as <code>cmo.phase</code>.</p>
 <p>Create perceptually uniform monochromatic colormaps starting at light gray and ending at red/blue/green. Essentially gray to black through a color.</p>
 <p>I wonder if Jeremy’s interest in the topological spaces of phylogenetic trees could be useful in understand lineage tracing/pseudotime. Given a tree, a knockout or other alteration to the system can be viewed as an operator to move you from one area in the topology to another (a different tree). What types of transformations have the largest “distance” or smallest “distance”? Is there a similar topological space that spans cyclic graphs (could be used to study regulatory networks)? What about using this to understand relationships between different trees learned from different patients/replicates?</p>
-<p>Discussed with 10X about: 1. No tdTomato reads. They took my contact info and will discuss with customer and technical support. 2. Why did they switch to 91bp for read 2 in v3? They didn’t know. They likely think that the 100bp kits have more than 25bp leeway.</p>
+<p>Discussed with 10X about: * No tdTomato reads. They took my contact info and will discuss with customer and technical support. * Why did they switch to 91bp for read 2 in v3? They didn’t know. They likely think that the 100bp kits have more than 25bp leeway.</p>
 <h1 id="keystone-2019-day-3-2019-01-16">Keystone 2019 Day 3: 2019-01-16</h1>
 <h2 id="am---stephen-quake---stanford-and-czi-biohub">8:00am - Stephen Quake - Stanford and CZI Biohub</h2>
 <p>Single Cell Genomics - A tool for drug discovery</p>
@@ -3282,13 +3282,14 @@ interactions with the bone marrow microenvironment and CXCR4.</code></pre>
 <p>The Tabula Muris</p>
 <h2 id="am---bart-deplancke---swiss-federal-institute-of-technology">8:30am - Bart Deplancke - Swiss Federal Institute of Technology</h2>
 <p>Low-input single- and intra-cell RNA sequencing technologies</p>
-<p>asap.epfl.ch</p>
+<p>Interactive scRNA-seq analysis platform: https://asap.epfl.ch</p>
 <p>Developing low input sequencing tech so that he can study single samples (not pooled data) and support clinical samples that have low cell counts.</p>
 <p>Drop-seq and InDrop require a base minimum of 10k and 2k input cells. Drop-seq has 90% cell loss, 10X has 50%, and InDrop has 25%.</p>
 <p>Developed DeterminIStic CO-encapsulation (DisCo). Designed to remove the single/double Poisson processes involved in cell-bead capture. Uses machine vision to have cells/beads line up at gates which only open when both are present. Co-encapsulation efficiency is ~80%. However, it’s slow: 400-500 cells/hr. Bead processing also leads to substantial loss of beads; you lose &lt;60% of beads during washing. Had to reinvent a new bead recovery mechanism which reduces bead loss to only 10%. Also allows for highly diluted samples.</p>
 <p>Due to machine vision, they can do size/shape sorts on the chip. In the future, this could be used to detect certain types of fluorescence, etc.</p>
 <p>Dream is to link high-resolution image of the cell to the transcriptome (via image recognition of the bead).</p>
-<p>Live-seq: scRNA-seq while keeping cells alive Using a force-microscopy head, you can carefully puncture individual cells, apply counter pressure and suck up small amounts of fluid/molecules from inside the cell. With 0.1 - 3.2 pL capture, 82% of cells remain viable.</p>
+<p>Live-seq: scRNA-seq while keeping cells alive</p>
+<p>Using a force-microscopy head, you can carefully puncture individual cells, apply counter pressure and suck up small amounts of fluid/molecules from inside the cell. With 0.1 - 3.2 pL capture, 82% of cells remain viable.</p>
 <p>Using a modified Smart-Seq2, they can sequence sub-picoliter volumes of mRNA. So far only able to capture ~1000 genes per cell, and only ~14 cells.</p>
 <h2 id="am---georg-seelig---uwash">9:30am - Georg Seelig - UWash</h2>
 <p>Split-Pool barcoding</p>
